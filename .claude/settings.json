@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "Bash(pytest*)",
+      "Bash(ruff*)",
+      "Bash(mypy*)",
+      "Bash(python -m*)",
+      "Bash(pip install*)",
+      "Bash(uv *)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(gh auth status*)",
+      "Bash(gh repo view*)",
+      "Bash(gh api repos/*/issues*)",
+      "Bash(gh api repos/*/milestones*)",
+      "Bash(gh api repos/*/labels*)",
+      "Bash(gh issue list*)",
+      "Bash(gh issue view*)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(git reset --hard*)",
+      "Bash(git rebase*)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(rm -rf /*)",
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ]
+  },
+  "env": {},
+  "includeCoAuthoredBy": false
+}
