@@ -1,0 +1,39 @@
+name: Watch new issues
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Check for new issues
+        env:
+          GITHUB_REPO: thunderbird/thunderbird-android
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: python3 New_Issues/watch_new_issues.py --once
+
+      - name: Persist state
+        run: |
+          if ! git diff --quiet -- New_Issues/state.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add New_Issues/state.json
+            git commit -m "chore: update issue watcher state"
+            git push
+          fi
