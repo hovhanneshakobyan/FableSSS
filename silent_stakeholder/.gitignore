@@ -1,0 +1,21 @@
+# Secrets — env.sh holds GROQ_API_KEY / GEMINI_API_KEY. Never commit it.
+env.sh
+.env
+
+# Virtualenv (290M) — rebuild with ./setup.sh
+.venv/
+__pycache__/
+*.pyc
+
+# Data. Both directories are SEPARATE git repos with their own remotes
+# (hovhanneshakobyan/FableSSS), so committing them here would record broken
+# submodule links and teammates would clone empty folders. Clone them directly.
+data/raw/
+data/qdrant/
+
+# Derived and rebuildable: `make db ingest` regenerates these from data/raw.
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+.DS_Store

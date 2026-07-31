@@ -1,0 +1,16 @@
+anthropic>=0.40.0
+qdrant-client[fastembed]>=1.18
+hdbscan>=0.8.38
+scikit-learn>=1.4
+numpy>=1.26
+pandas>=2.2
+streamlit>=1.38
+jinja2>=3.1
+
+# agent/ — ReAct chat over the KB
+langgraph>=1.2
+langchain-core>=1.5
+# free-tier providers; only the one you actually use needs to be installed
+langchain-groq>=1.1
+langchain-google-genai>=4.3
+langchain-ollama>=1.1
