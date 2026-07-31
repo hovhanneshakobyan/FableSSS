@@ -290,5 +290,90 @@ def get_review(review_id: str) -> str:
     return _j({k: p[k] for k in ("review_id", "text", "star", "date") if k in p})
 
 
-TOOLS = [search_reviews, search_issues, compare_vocabularies, related_issues,
+# --------------------------------------------------------------- the findings
+# These read data/gaps.json — the deterministic engine's output — and never
+# recompute anything. That is the point: on stage the model must not be able to
+# re-derive a different confidence for the same gap than the one on the slide.
+# The engine decides; the agent explains and cites.
+@tool
+def top_gaps() -> str:
+    """THE ANSWER TO THE BRIEF. The ranked unmet needs the roadmap is missing,
+    strongest evidence first, each with confidence, verdict and evidence ids.
+
+    Call this FIRST for any question like "what are the gaps", "what did the
+    roadmap miss", "what do users need". Do not rebuild this from searches —
+    these numbers are computed deterministically and are the ones being scored.
+    """
+    from gaps import engine
+
+    res = engine.load()
+    if not res:
+        return _j({"error": "no data/gaps.json yet — run: make gaps"})
+    return _j({"meta": res["meta"], "gaps": [
+        {"rank": g["rank"], "need": g["need"], "id": g["id"],
+         "confidence": g["confidence"], "verdict": g["verdict"],
+         "why_verdict": g["reason"],
+         "users_say": g["symptom_terms"], "backlog_says": g["mechanism_terms"],
+         "n_reviews": g["metrics"]["n_reviews"],
+         "mean_star": g["metrics"]["mean_star"],
+         "n_issues": g["metrics"]["n_issues"],
+         "pii": g["metrics"]["pii"], "bridge": g["metrics"]["bridge_n"],
+         "evidence_ids": [r["cite"] for r in g["evidence"]["reviews"][:6]]
+                         + [i["cite"] for i in g["evidence"]["issues"][:4]]}
+        for g in res["gaps"]]})
+
+
+@tool
+def why_gap(gap_id: str) -> str:
+    """Full arithmetic behind ONE gap: every confidence component, every
+    penalty with its cost and reason, the verdict counts, and the evidence
+    trace by id. This is what answers "defend that confidence score" and
+    "why is this ranked #1" — the breakdown is already computed, quote it.
+    """
+    from gaps import engine
+
+    res = engine.load()
+    if not res:
+        return _j({"error": "no data/gaps.json yet — run: make gaps"})
+    g = next((x for x in res["gaps"] if x["id"] == _bare(gap_id)), None)
+    if not g:
+        return _j({"error": f"no gap {gap_id!r}",
+                   "available": [x["id"] for x in res["gaps"]]})
+    return _j({"rank": g["rank"], "need": g["need"],
+               "confidence": g["confidence"], "formula": g["score"]["formula"],
+               "evidence_half": g["score"]["E"], "latency_half": g["score"]["L"],
+               "penalties": g["score"]["penalties"],
+               "verdict": g["verdict"], "why": g["why"], "reason": g["reason"],
+               "metrics": {k: g["metrics"][k] for k in
+                           ("n_reviews", "prevalence", "mean_star",
+                            "star_deficit", "months_hit", "max_share",
+                            "n_issues", "n_open", "median_days_open", "epics",
+                            "pii", "bridge_n", "control_ratio",
+                            "control_reading", "recurrence")},
+               "evidence": g["evidence"]})
+
+
+@tool
+def missed_gap(terms: str) -> str:
+    """THE ADVERSARIAL TOOL. Answers "here's a gap you missed — why isn't it in
+    your output?" for any comma-separated terms.
+
+    Returns exactly one of four honest statuses:
+      SURFACED             it IS in the output, at this rank
+      CONSIDERED & REJECTED it was scored and dropped — names the component
+                            that failed and its confidence
+      BELOW THRESHOLD      it is in the corpus at this rate and mean star, but
+                            under the support floor — includes real verbatims
+      NOT IN CORPUS        users never say it; the issue count is given instead
+
+    Use this whenever someone proposes a topic that is not already a gap.
+    """
+    from gaps import engine
+
+    with _LOCK:
+        return _j(engine.probe(terms))
+
+
+TOOLS = [top_gaps, why_gap, missed_gap,
+         search_reviews, search_issues, compare_vocabularies, related_issues,
          count_terms, polarity, control, get_issue, get_review]

@@ -1,0 +1,438 @@
+{
+ "rejected": [
+  {
+   "id": "reading",
+   "label": "reading",
+   "route": "latent",
+   "symptom_terms": [
+    "reading"
+   ],
+   "mechanism_terms": [
+    "fingers"
+   ],
+   "failed": "burst",
+   "confidence": 20,
+   "detail": "confidence 20 < floor 25",
+   "components": {
+    "confidence": 20,
+    "raw": 43.1,
+    "E": {
+     "support": 0.626,
+     "dispersion": 0.209,
+     "friction": 0.587,
+     "quality": 0.912,
+     "E": 0.6046
+    },
+    "L": {
+     "pii_norm": 0.145,
+     "recurrence": 0.176,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.2198
+    },
+    "penalties": [
+     {
+      "code": "burst",
+      "cost": 15,
+      "why": "53% of evidence lands in one month — that is an event, not a sustained need"
+     },
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.6046 + 0.45*L=0.2198)) - 23 penalties"
+   }
+  },
+  {
+   "id": "tested",
+   "label": "tested",
+   "route": "latent",
+   "symptom_terms": [
+    "tested"
+   ],
+   "mechanism_terms": [
+    "response"
+   ],
+   "failed": "burst",
+   "confidence": 21,
+   "detail": "confidence 21 < floor 25",
+   "components": {
+    "confidence": 21,
+    "raw": 44.4,
+    "E": {
+     "support": 0.556,
+     "dispersion": 0.259,
+     "friction": 0.625,
+     "quality": 0.625,
+     "E": 0.531
+    },
+    "L": {
+     "pii_norm": 0.547,
+     "recurrence": 0.083,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.3372
+    },
+    "penalties": [
+     {
+      "code": "burst",
+      "cost": 15,
+      "why": "42% of evidence lands in one month — that is an event, not a sustained need"
+     },
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.531 + 0.45*L=0.3372)) - 23 penalties"
+   }
+  },
+  {
+   "id": "multiple-accounts",
+   "label": "multiple accounts",
+   "route": "polarity",
+   "symptom_terms": [
+    "multiple accounts",
+    "several accounts"
+   ],
+   "mechanism_terms": [
+    "less secure"
+   ],
+   "failed": "unwitnessed",
+   "confidence": 24,
+   "detail": "confidence 24 < floor 25",
+   "components": {
+    "confidence": 24,
+    "raw": 32.4,
+    "E": {
+     "support": 0.587,
+     "dispersion": 0.349,
+     "friction": 0.357,
+     "quality": 0.465,
+     "E": 0.4513
+    },
+    "L": {
+     "pii_norm": 0.122,
+     "recurrence": 0.0,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.1677
+    },
+    "penalties": [
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.4513 + 0.45*L=0.1677)) - 8 penalties"
+   }
+  },
+  {
+   "id": "getting",
+   "label": "getting",
+   "route": "latent",
+   "symptom_terms": [
+    "getting"
+   ],
+   "mechanism_terms": [
+    "username password",
+    "password account",
+    "authenticate",
+    "failure",
+    "failures",
+    "authentication fails"
+   ],
+   "failed": "rank",
+   "confidence": 49,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "google",
+   "label": "google",
+   "route": "latent",
+   "symptom_terms": [
+    "google"
+   ],
+   "mechanism_terms": [
+    "less secure",
+    "alert",
+    "leave"
+   ],
+   "failed": "rank",
+   "confidence": 46,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "zoom",
+   "label": "zoom",
+   "route": "polarity",
+   "symptom_terms": [
+    "zoom",
+    "pinch",
+    "font size",
+    "text size"
+   ],
+   "mechanism_terms": [
+    "fingers"
+   ],
+   "failed": "rank",
+   "confidence": 43,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "receive",
+   "label": "receive",
+   "route": "latent",
+   "symptom_terms": [
+    "receive"
+   ],
+   "mechanism_terms": [
+    "loaded",
+    "configured"
+   ],
+   "failed": "rank",
+   "confidence": 54,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "uninstalling",
+   "label": "uninstalling",
+   "route": "polarity",
+   "symptom_terms": [
+    "uninstalling"
+   ],
+   "mechanism_terms": [
+    "code"
+   ],
+   "failed": "rank",
+   "confidence": 44,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "uninstalled",
+   "label": "uninstalled",
+   "route": "polarity",
+   "symptom_terms": [
+    "uninstalled"
+   ],
+   "mechanism_terms": [
+    "rid",
+    "separate"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "contact",
+   "label": "contact",
+   "route": "latent",
+   "symptom_terms": [
+    "contact"
+   ],
+   "mechanism_terms": [
+    "expect"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "less",
+   "label": "less",
+   "route": "latent",
+   "symptom_terms": [
+    "less"
+   ],
+   "mechanism_terms": [
+    "based"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "notifications",
+   "label": "notifications",
+   "route": "latent",
+   "symptom_terms": [
+    "notification",
+    "notifications",
+    "notify"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 41,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "source",
+   "label": "source",
+   "route": "polarity",
+   "symptom_terms": [
+    "source"
+   ],
+   "mechanism_terms": [
+    "signed encrypted",
+    "anyways",
+    "keys",
+    "signed"
+   ],
+   "failed": "rank",
+   "confidence": 37,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "list",
+   "label": "list",
+   "route": "latent",
+   "symptom_terms": [
+    "list"
+   ],
+   "mechanism_terms": [
+    "seconds"
+   ],
+   "failed": "rank",
+   "confidence": 40,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "syncing-disabled",
+   "label": "syncing disabled",
+   "route": "polarity",
+   "symptom_terms": [
+    "syncing disabled",
+    "sync disabled"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 40,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "nougat",
+   "label": "nougat",
+   "route": "polarity",
+   "symptom_terms": [
+    "nougat"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 44,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "stock",
+   "label": "stock",
+   "route": "polarity",
+   "symptom_terms": [
+    "stock"
+   ],
+   "mechanism_terms": [
+    "attempt"
+   ],
+   "failed": "rank",
+   "confidence": 36,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "replies",
+   "label": "replies",
+   "route": "latent",
+   "symptom_terms": [
+    "replies"
+   ],
+   "mechanism_terms": [
+    "enabled"
+   ],
+   "failed": "rank",
+   "confidence": 35,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "configure",
+   "label": "configure",
+   "route": "latent",
+   "symptom_terms": [
+    "configure"
+   ],
+   "mechanism_terms": [
+    "seconds"
+   ],
+   "failed": "rank",
+   "confidence": 39,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "mark-read",
+   "label": "mark read",
+   "route": "polarity",
+   "symptom_terms": [
+    "mark read"
+   ],
+   "mechanism_terms": [
+    "actions",
+    "marked"
+   ],
+   "failed": "rank",
+   "confidence": 32,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "authentication",
+   "label": "authentication",
+   "route": "latent",
+   "symptom_terms": [
+    "authentication"
+   ],
+   "mechanism_terms": [
+    "username password",
+    "password account",
+    "authenticate",
+    "failure",
+    "failures",
+    "response"
+   ],
+   "failed": "rank",
+   "confidence": 32,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "design",
+   "label": "design",
+   "route": "polarity",
+   "symptom_terms": [
+    "design"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 29,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "ads",
+   "label": "ads",
+   "route": "polarity",
+   "symptom_terms": [
+    "ads",
+    "advert",
+    "advertising"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 28,
+   "detail": "scored below the top 5"
+  }
+ ],
+ "meta": {
+  "as_of": "2026-07-31",
+  "reviews": 1560,
+  "issues": 1718,
+  "candidates_considered": 48,
+  "surfaced": 5
+ }
+}
