@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FableSSS — K9 Mail Review Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0EA;
+    --paper-dim:#E3E6DD;
+    --ink:#152018;
+    --ink-soft:#4A5A4E;
+    --line:#C9CFC0;
+    --brass:#B4863B;
+    --brass-deep:#8C6528;
+    --teal:#33646A;
+    --alert:#A6402F;
+    --card:#F7F8F3;
+    --shadow: 0 1px 0 rgba(21,32,24,0.06);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', serif;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(21,32,24,0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  .disp{font-family:'Barlow Condensed', sans-serif; letter-spacing:0.02em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  header{
+    padding:22px 32px 18px;
+    border-bottom:2px solid var(--ink);
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .tag-icon{
+    width:40px;height:40px;border-radius:8px;
+    background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    flex-shrink:0;
+  }
+  .tag-icon::after{
+    content:"";
+    width:9px;height:9px;border-radius:50%;
+    background:var(--paper);
+  }
+  h1{
+    font-family:'Barlow Condensed', sans-serif;
+    font-weight:700;
+    font-size:30px;
+    margin:0;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    line-height:1;
+  }
+  .subhead{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft); margin-top:4px; text-transform:uppercase; letter-spacing:0.08em;}
+  .stat-row{display:flex; gap:26px;}
+  .stat{text-align:right;}
+  .stat .num{font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:600; color:var(--ink);}
+  .stat .lbl{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em;}
+
+  .wrap{display:grid; grid-template-columns:230px 1fr 340px; min-height:calc(100vh - 92px);}
+  @media (max-width:980px){ .wrap{grid-template-columns:1fr;} }
+
+  nav{
+    border-right:1px solid var(--line);
+    padding:20px 14px;
+  }
+  .nav-title{font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-soft); margin:0 0 10px 4px;}
+  .coll-btn{
+    display:flex; justify-content:space-between; align-items:center;
+    width:100%; text-align:left; padding:10px 12px; margin-bottom:6px;
+    background:transparent; border:1px solid transparent; border-radius:6px;
+    font-family:'Barlow Condensed',sans-serif; font-size:17px; font-weight:600;
+    color:var(--ink); cursor:pointer; transition:.15s;
+  }
+  .coll-btn .n{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft);}
+  .coll-btn:hover{background:var(--card); border-color:var(--line);}
+  .coll-btn.active{background:var(--ink); color:var(--paper);}
+  .coll-btn.active .n{color:var(--paper-dim);}
+
+  .divider{height:1px; background:var(--line); margin:16px 4px;}
+
+  .facet{margin-bottom:14px;}
+  .facet h4{font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); margin:0 0 8px 4px;}
+  .chip-list{display:flex; flex-wrap:wrap; gap:6px; padding:0 4px;}
+  .chip{
+    font-family:'JetBrains Mono',monospace; font-size:11px;
+    padding:4px 9px; border:1px solid var(--line); border-radius:20px;
+    cursor:pointer; background:var(--card); color:var(--ink-soft);
+  }
+  .chip.on{background:var(--brass); border-color:var(--brass-deep); color:#fff;}
+
+  main{padding:22px 26px; overflow:hidden;}
+
+  .summary-strip{
+    display:flex; gap:12px; margin-bottom:18px; flex-wrap:wrap;
+  }
+  .summary-card{
+    flex:1; min-width:200px;
+    background:var(--card); border:1px solid var(--line); border-left:3px solid var(--alert);
+    border-radius:8px; padding:12px 14px;
+  }
+  .summary-card.ok{border-left-color:var(--teal);}
+  .summary-card .sc-title{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:15px; margin-bottom:3px;}
+  .summary-card .sc-body{font-size:12.5px; color:var(--ink-soft); line-height:1.45;}
+
+  .trend-panel{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:16px 18px 10px; margin-bottom:20px;
+  }
+  .trend-title{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:16px; margin-bottom:12px;}
+  .trend-bars{display:flex; align-items:flex-end; gap:14px; height:110px; padding:0 4px;}
+  .trend-col{flex:1; display:flex; flex-direction:column; align-items:center; height:100%; justify-content:flex-end;}
+  .trend-bar{width:100%; max-width:38px; border-radius:4px 4px 0 0; background:var(--teal); position:relative;}
+  .trend-bar.low{background:var(--alert);}
+  .trend-bar.mid{background:var(--brass);}
+  .trend-val{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-soft); margin-bottom:4px;}
+  .trend-lbl{font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ink-soft); margin-top:6px;}
+
+  .search-bar{
+    display:flex; gap:10px; margin-bottom:18px;
+  }
+  .search-bar input{
+    flex:1; padding:12px 16px; border:1px solid var(--ink); border-radius:8px;
+    font-family:'Source Serif 4',serif; font-size:15px; background:var(--card);
+  }
+  .search-bar input:focus{outline:2px solid var(--brass); outline-offset:1px;}
+  .search-bar button{
+    padding:0 20px; border:none; border-radius:8px; background:var(--ink); color:var(--paper);
+    font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:16px; letter-spacing:.03em;
+    cursor:pointer;
+  }
+  .search-meta{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft); margin-bottom:14px;}
+
+  .review-card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:16px 18px; margin-bottom:12px; cursor:pointer; transition:.15s;
+    box-shadow:var(--shadow);
+  }
+  .review-card:hover{border-color:var(--brass);}
+  .review-card.selected{border-color:var(--ink); border-width:2px;}
+  .rc-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px;}
+  .rc-version{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:16px;}
+  .rc-date{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft);}
+  .rc-rating{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--brass-deep);}
+  .rc-text{font-size:14.5px; line-height:1.55; color:var(--ink); margin:0 0 10px;}
+  .rc-text mark{background:rgba(180,134,59,0.28); color:var(--ink); padding:0 1px; border-radius:2px;}
+  .rc-issues{display:flex; flex-wrap:wrap; gap:6px;}
+
+  .dogtag{
+    display:inline-flex; align-items:center; gap:5px;
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em;
+    padding:3px 9px 3px 7px; border-radius:4px; border:1px solid var(--brass-deep);
+    background:#FBF4E6; color:var(--brass-deep);
+  }
+  .dogtag::before{content:""; width:5px;height:5px;border-radius:50%; background:var(--brass-deep); flex-shrink:0;}
+  .dogtag.alert{border-color:var(--alert); color:var(--alert); background:#FBEEEC;}
+  .dogtag.alert::before{background:var(--alert);}
+
+  aside{
+    border-left:1px solid var(--line);
+    padding:20px 20px 30px;
+  }
+  aside h3{font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-soft); margin:0 0 14px;}
+
+  .issue-bar-row{margin-bottom:12px;}
+  .issue-bar-label{display:flex; justify-content:space-between; font-size:12.5px; margin-bottom:4px;}
+  .issue-bar-label .name{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:14.5px;}
+  .issue-bar-label .count{font-family:'JetBrains Mono',monospace; color:var(--ink-soft);}
+  .bar-track{height:8px; background:var(--paper-dim); border-radius:4px; overflow:hidden;}
+  .bar-fill{height:100%; background:linear-gradient(90deg, var(--teal), var(--brass));}
+
+  .detail-empty{color:var(--ink-soft); font-size:13.5px; font-family:'JetBrains Mono',monospace; line-height:1.7;}
+  .detail-block{margin-bottom:18px;}
+  .detail-block h4{font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; margin:0 0 8px;}
+  .sentence-row{
+    font-size:13px; line-height:1.5; padding:8px 10px; margin-bottom:6px;
+    background:var(--card); border-left:3px solid var(--teal); border-radius:0 6px 6px 0;
+  }
+  .sim{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--teal); margin-left:6px;}
+
+  .mcp-row{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:8px 10px; margin-bottom:6px; border:1px solid var(--line); border-radius:6px;
+    background:var(--card);
+  }
+  .mcp-name{font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--ink);}
+  .mcp-desc{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:var(--ink-soft); display:block; margin-top:1px;}
+  .mcp-dot{width:8px;height:8px;border-radius:50%; background:var(--teal); flex-shrink:0; box-shadow:0 0 0 3px rgba(51,100,106,0.15);}
+  .mcp-dot.warn{background:var(--brass);}
+
+  footer{
+    text-align:center; padding:16px; font-family:'JetBrains Mono',monospace;
+    font-size:10.5px; color:var(--ink-soft); border-top:1px solid var(--line);
+  }
+
+  /* ---- Shareholder PDF report (print only) ---- */
+  #printReport{ display:none; }
+  .pr-title{font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:700; margin:0 0 2px;}
+  .pr-sub{font-family:'JetBrains Mono',monospace; font-size:11px; color:#555; margin-bottom:18px;}
+  .pr-stats{display:flex; gap:24px; margin-bottom:20px;}
+  .pr-stat .n{font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700;}
+  .pr-stat .l{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:#555; text-transform:uppercase;}
+  .pr-h{font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; margin:22px 0 10px; border-bottom:1px solid #ccc; padding-bottom:4px;}
+  .pr-callout{border-left:3px solid var(--alert); padding:6px 10px; margin-bottom:8px; font-size:12px; background:#F7F7F5;}
+  .pr-callout.ok{border-left-color:var(--teal);}
+  .pr-trend-row{display:flex; align-items:center; gap:8px; margin-bottom:4px; font-family:'JetBrains Mono',monospace; font-size:11px;}
+  .pr-trend-bar{height:10px; background:var(--teal); border-radius:2px;}
+  .pr-issue-row{display:flex; justify-content:space-between; font-size:12px; padding:4px 0; border-bottom:1px solid #eee;}
+  .pr-review{font-size:11.5px; padding:8px 0; border-bottom:1px solid #eee;}
+  .pr-review .meta{font-family:'JetBrains Mono',monospace; font-size:9.5px; color:#666; margin-bottom:2px;}
+
+  @media print{
+    body *{ visibility:hidden; }
+    #printReport, #printReport *{ visibility:visible; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    #printReport{ display:block; position:absolute; left:0; top:0; width:100%; padding:20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="tag-icon"></div>
+    <div>
+      <h1>FableSSS</h1>
+      <div class="subhead">K9 Mail app review intelligence · Play Store dataset</div>
+    </div>
+  </div>
+  <div class="stat-row">
+    <div class="stat"><div class="num" id="statReviews">—</div><div class="lbl">reviews</div></div>
+    <div class="stat"><div class="num" id="statIssues">—</div><div class="lbl">issues tagged</div></div>
+    <div class="stat"><div class="num" id="statSentences">—</div><div class="lbl">sentences</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav>
+    <div class="nav-title">Collections</div>
+    <button class="coll-btn active" data-coll="k9_reviews">Reviews <span class="n" id="cntReviews">0</span></button>
+    <button class="coll-btn" data-coll="k9_issues">Issues <span class="n" id="cntIssues">0</span></button>
+    <button class="coll-btn" data-coll="k9_sentences">Sentences <span class="n" id="cntSentences">0</span></button>
+
+    <div class="divider"></div>
+
+    <div class="facet">
+      <h4>App version</h4>
+      <div class="chip-list" id="facetVersion"></div>
+    </div>
+    <div class="facet">
+      <h4>Rating</h4>
+      <div class="chip-list" id="facetRating"></div>
+    </div>
+    <div class="facet">
+      <h4>Issue type</h4>
+      <div class="chip-list" id="facetIssue"></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="facet">
+      <h4>Agent automation · .claude/settings.json</h4>
+      <div class="mcp-row">
+        <div><span class="mcp-name">tests + lint</span><span class="mcp-desc">pytest · ruff · mypy on write</span></div>
+        <div class="mcp-dot"></div>
+      </div>
+      <div class="mcp-row">
+        <div><span class="mcp-name">git (no push)</span><span class="mcp-desc">commit/branch auto · push asks</span></div>
+        <div class="mcp-dot"></div>
+      </div>
+      <div class="mcp-row">
+        <div><span class="mcp-name">gh issues sync</span><span class="mcp-desc">issues/milestones/labels via gh api</span></div>
+        <div class="mcp-dot warn"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="summary-strip" id="summaryStrip"></div>
+
+    <div class="trend-panel">
+      <div class="trend-title">Average rating by version</div>
+      <div class="trend-bars" id="trendBars"></div>
+    </div>
+
+    <div class="search-bar">
+      <input id="searchInput" type="text" placeholder="Search reviews and complaints — e.g. “syncing gets disabled”">
+      <button id="searchBtn">Search</button>
+      <button id="exportPdfBtn" style="background:var(--brass); flex-shrink:0;">Export PDF</button>
+    </div>
+    <div class="search-meta" id="searchMeta">Showing all reviews · click a card to inspect its extracted sentences</div>
+    <div id="reviewList"></div>
+  </main>
+
+  <aside>
+    <h3>Top issues (this view)</h3>
+    <div id="issueBars"></div>
+    <div class="divider"></div>
+    <h3>Review detail</h3>
+    <div id="detailPanel" class="detail-empty">Select a review to see its tags and similar complaints from other customers.</div>
+  </aside>
+</div>
+
+<div id="printReport"></div>
+
+<footer>Source: data/raw/k9_reviews.json · real Play Store review text · issue tags are illustrative — refine with data/raw/k9_issues_all.json for production accuracy</footer>
+
+<script>
+// ---------- Real K9 Mail (Android email client) review data, sampled from data/raw/k9_reviews.json ----------
+const REVIEWS = [
+  {id:"d801f460", version:"1.10", date:"2016-11-20", star:2, text:"With Yahoo and Gmail I get not the right user name or password. Tried the web address for problems, no place to send an issue request. Works fine on POP3 and Hotmail.", issues:["auth-failure","gmail-yahoo"]},
+  {id:"25e0-push", version:"1.10", date:"2016-10-08", star:2, text:"Push not great. Swipe not existing. The push notifications often don't come through — maybe only 80%. Outlook and Gmail get 100%. No swiping features like other clients.", issues:["push-notifications","missing-swipe"]},
+  {id:"dc2b04c9", version:"1.10", date:"2016-11-12", star:3, text:"Declining performance. Over time emails disappear, deleted emails reappear, and now emails aren't pulled from the server unless I refresh. Checked my settings, found no problems.", issues:["sync-reliability"]},
+  {id:"dc47666b", version:"1.10", date:"2016-11-11", star:1, text:"Authors refuse to listen to users about attachments. Give the users the ability to configure automatically downloading and showing attachments.", issues:["attachments","feature-request"]},
+  {id:"e3ab-zoom", version:"1.10", date:"2016-11-03", star:2, text:"Impossible to zoom into an email.", issues:["zoom"]},
+  {id:"e62cf76e", version:"1.10", date:"2016-10-29", star:3, text:"Accessibility issues with fonts. Only a set range of font sizes are available, and they top out at relatively low values. Unlimited font scaling would be good, similar to some other apps.", issues:["font-size","accessibility"]},
+  {id:"e7336af9", version:"1.10", date:"2016-10-28", star:4, text:"The app needs a professional UI redesign by someone with UX / design background. That said, the app itself is useful and functional.", issues:["ui-ux","outdated-design"]},
+  {id:"7e7f-crash", version:"1.10", date:"2016-10-27", star:2, text:"Became buggy. Every time I try to delete mail it freezes and crashes. Reported the bug many times with no response.", issues:["crashes"]},
+  {id:"cc14dd8b", version:"1.09", date:"2016-04-23", star:3, text:"A little outdated in how it looks. Could be better in describing setup — e.g. actually give the option for push or manual sync, plus a schedule for when mail is synced.", issues:["outdated-design","onboarding"]},
+  {id:"eca3ef7f", version:"1.10", date:"2016-10-20", star:3, text:"Good app with many features and customisation options, but the UI is absolutely horrible.", issues:["ui-ux"]},
+  {id:"0d095ff9", version:"5.201", date:"2017-01-01", star:5, text:"Been using this for years and it always delivers. Edit: today's update frustratingly pops up asking if I'm sure I want to mark all as read — please get rid of that, it's unnecessary.", issues:["update-regression","confirmation-dialogs"]},
+  {id:"7d0e3bb4", version:"5.202", date:"2017-01-04", star:1, text:"Latest update is no good. Emails show up now in a very small font and I cannot expand it with my fingers. Attachments are now at the bottom of the emails instead of at the top.", issues:["zoom","attachments-bottom","update-regression"]},
+  {id:"a643b9b3", version:"110", date:"2016-11-26", star:2, text:"Not so perfect anymore. On Google Pixel the app auto-defaults to 'syncing disabled' and I have to manually refresh the sync. Running Marshmallow.", issues:["sync-disabled"]},
+  {id:"9ec9aaa2", version:"110", date:"2016-12-03", star:2, text:"When I am forced to change Gmail passwords I have to uninstall and reinstall for the app to work right. Also having issues with sync suddenly being disabled on accounts.", issues:["sync-disabled","gmail-auth"]},
+  {id:"228608ec", version:"110", date:"2016-08-10", star:3, text:"An absolute data and battery hog on mobile. Battery would barely last half a day, and K9 was using over 3GB of background data in a week without significant emailing.", issues:["battery-drain","data-usage"]},
+  {id:"7f82e538", version:"5.201", date:"2017-01-04", star:1, text:"Stuck on the database upgrade screen after the update. Roll back the update until you have a working release — worked fine for years, now it's useless.", issues:["update-regression","database-upgrade"]},
+  {id:"0eacafc1", version:"5.201", date:"2016-12-31", star:5, text:"Have been using it for years. However with the last update K9 keeps giving authentication failed messages even after re-entering passwords, and the constant notifications are annoying.", issues:["gmail-auth","update-regression"]},
+  {id:"d1d98004", version:"108", date:"2016-02-03", star:5, text:"Signs and encrypts mail with APG or OpenKeyChain — allows signing, encrypting, verifying and decryption of mail messages.", issues:["encryption"]},
+  {id:"65e6cfa6", version:"110", date:"2017-01-02", star:4, text:"It's open source and you can build your own app from the source hosted on GitHub. A 'proper' email client without the bells and whistles of other clients, and as of version 5.2 it now supports PGP/MIME via OpenKeyChain.", issues:["encryption","open-source"]},
+  {id:"1a19d08d", version:"110", date:"2016-08-28", star:3, text:"For years I used K-9 email along with a third-party unread mail list widget, but the widget is no longer available and I can't get it to install. Wish K-9 had a native mail list widget.", issues:["missing-widget"]},
+];
+
+const SENTENCE_INDEX = [
+  {text:"Syncing disabled again after switching from WiFi to mobile data.", version:"110", sim:0.90, tag:"sync-disabled"},
+  {text:"Auto sync doesn't work since the Marshmallow update.", version:"110", sim:0.86, tag:"sync-disabled"},
+  {text:"Pinch to zoom stopped working after the latest update.", version:"5.202", sim:0.88, tag:"zoom"},
+  {text:"Attachments are now shown at the bottom instead of the top of the email.", version:"5.202", sim:0.84, tag:"attachments-bottom"},
+  {text:"Battery drains fast even with background sync turned off.", version:"110", sim:0.81, tag:"battery-drain"},
+  {text:"Gmail blocked the app for not meeting modern security standards.", version:"110", sim:0.79, tag:"gmail-auth"},
+  {text:"The interface still looks like it's from an older Android era.", version:"1.10", sim:0.73, tag:"ui-ux"},
+];
+
+// ---------- Plain-language labels for support-team readability ----------
+const ISSUE_LABELS = {
+  "auth-failure":"Login fails", "gmail-yahoo":"Gmail/Yahoo setup", "push-notifications":"Push not reliable",
+  "missing-swipe":"No swipe actions", "sync-reliability":"Emails vanish/reappear", "attachments":"Attachment handling",
+  "feature-request":"Feature request", "zoom":"Can't zoom messages", "font-size":"Font size limited",
+  "accessibility":"Accessibility", "ui-ux":"UI feels outdated", "outdated-design":"UI feels outdated",
+  "crashes":"App crashes", "onboarding":"Confusing setup", "update-regression":"Broke after update",
+  "confirmation-dialogs":"Extra confirmation popups", "attachments-bottom":"Attachments moved to bottom",
+  "sync-disabled":"Sync gets disabled", "gmail-auth":"Gmail login blocked", "battery-drain":"Battery drain",
+  "data-usage":"High data usage", "database-upgrade":"Stuck on update screen", "encryption":"PGP/encryption (liked)",
+  "open-source":"Open source (liked)", "missing-widget":"No home-screen widget"
+};
+function label(key){ return ISSUE_LABELS[key] || key; }
+
+// ---------- State ----------
+let state = { coll:"k9_reviews", version:null, rating:null, issue:null, query:"", selected:null };
+
+const allVersions = [...new Set(REVIEWS.map(r=>r.version))];
+const allIssues = [...new Set(REVIEWS.flatMap(r=>r.issues))];
+
+document.getElementById("statReviews").textContent = REVIEWS.length;
+document.getElementById("statIssues").textContent = REVIEWS.reduce((a,r)=>a+r.issues.length,0);
+document.getElementById("statSentences").textContent = REVIEWS.length*3 + SENTENCE_INDEX.length;
+document.getElementById("cntReviews").textContent = REVIEWS.length;
+document.getElementById("cntIssues").textContent = allIssues.length;
+document.getElementById("cntSentences").textContent = REVIEWS.length*3 + SENTENCE_INDEX.length;
+
+function renderFacets(){
+  const fv = document.getElementById("facetVersion");
+  fv.innerHTML = allVersions.map(v=>`<div class="chip ${state.version===v?'on':''}" data-facet="version" data-val="${v}">v${v}</div>`).join("");
+  const fr = document.getElementById("facetRating");
+  fr.innerHTML = [5,4,3,2,1].map(r=>`<div class="chip ${state.rating===r?'on':''}" data-facet="rating" data-val="${r}">${"★".repeat(r)}</div>`).join("");
+  const fi = document.getElementById("facetIssue");
+  fi.innerHTML = allIssues.map(i=>`<div class="chip ${state.issue===i?'on':''}" data-facet="issue" data-val="${i}">${label(i)}</div>`).join("");
+
+  document.querySelectorAll(".chip").forEach(c=>{
+    c.onclick = ()=>{
+      const f = c.dataset.facet, v = c.dataset.facet==="rating"? Number(c.dataset.val): c.dataset.val;
+      state[f] = state[f]===v ? null : v;
+      render();
+    };
+  });
+}
+
+function filteredReviews(){
+  return REVIEWS.filter(r=>
+    (!state.version || r.version===state.version) &&
+    (!state.rating || r.star===state.rating) &&
+    (!state.issue || r.issues.includes(state.issue)) &&
+    (!state.query || r.text.toLowerCase().includes(state.query.toLowerCase()) || r.issues.some(i=>i.includes(state.query.toLowerCase())))
+  );
+}
+
+function highlight(text){
+  if(!state.query) return text;
+  const q = state.query.trim();
+  if(!q) return text;
+  const re = new RegExp("("+q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","ig");
+  return text.replace(re, "<mark>$1</mark>");
+}
+
+function renderIssueBars(list){
+  const counts = {};
+  list.forEach(r=>r.issues.forEach(i=>counts[i]=(counts[i]||0)+1));
+  const entries = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const max = entries.length ? entries[0][1] : 1;
+  document.getElementById("issueBars").innerHTML = entries.map(([name,count])=>`
+    <div class="issue-bar-row">
+      <div class="issue-bar-label"><span class="name">${label(name)}</span><span class="count mono">${count}</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:${(count/max*100).toFixed(0)}%"></div></div>
+    </div>
+  `).join("") || `<div class="detail-empty">No issues in current filter.</div>`;
+}
+
+function renderList(){
+  const list = filteredReviews();
+  document.getElementById("searchMeta").textContent =
+    state.query ? `${list.length} match(es) for “${state.query}” across k9_reviews` : `Showing ${list.length} of ${REVIEWS.length} reviews`;
+
+  document.getElementById("reviewList").innerHTML = list.map(r=>`
+    <div class="review-card ${state.selected===r.id?'selected':''}" data-id="${r.id}">
+      <div class="rc-top">
+        <div class="rc-version">K9 Mail <span class="mono">v${r.version}</span> <span class="rc-date">· ${r.date}</span></div>
+        <div class="rc-rating mono">${"★".repeat(r.star)}${"☆".repeat(5-r.star)}</div>
+      </div>
+      <p class="rc-text">${highlight(r.text)}</p>
+      <div class="rc-issues">${r.issues.map(i=>`<span class="dogtag ${["crashes","gmail-auth","update-regression","sync-disabled"].includes(i)?'alert':''}">${label(i)}</span>`).join("")}</div>
+    </div>
+  `).join("") || `<div class="detail-empty">No reviews match the current filters.</div>`;
+
+  document.querySelectorAll(".review-card").forEach(c=>{
+    c.onclick = ()=>{ state.selected = c.dataset.id; renderDetail(); renderList(); };
+  });
+
+  renderIssueBars(list);
+}
+
+function renderDetail(){
+  const panel = document.getElementById("detailPanel");
+  if(!state.selected){ panel.className="detail-empty"; panel.innerHTML = "Select a review card to see its issue tags, matched sentences, and nearest neighbors in the vector index."; return; }
+  const r = REVIEWS.find(x=>x.id===state.selected);
+  panel.className = "";
+  const neighbors = SENTENCE_INDEX
+    .filter(s=>r.issues.includes(s.tag))
+    .sort((a,b)=>b.sim-a.sim)
+    .slice(0,3);
+  panel.innerHTML = `
+    <div class="detail-block">
+      <h4>K9 Mail v${r.version} · ${r.date}</h4>
+      <div class="rc-issues" style="margin-bottom:10px;">${r.issues.map(i=>`<span class="dogtag">${label(i)}</span>`).join("")}</div>
+      <p style="font-size:13.5px; line-height:1.55;">${r.text}</p>
+    </div>
+    <div class="detail-block">
+      <h4>Similar complaints from other customers</h4>
+      ${neighbors.map(n=>`<div class="sentence-row">${n.text}<span class="sim">${Math.round(n.sim*100)}% similar</span></div>`).join("") || `<div class="detail-empty">No similar complaints found for these tags yet.</div>`}
+    </div>
+  `;
+}
+
+document.getElementById("searchBtn").onclick = ()=>{ state.query = document.getElementById("searchInput").value.trim(); render(); };
+document.getElementById("searchInput").addEventListener("keydown", e=>{ if(e.key==="Enter"){ state.query = e.target.value.trim(); render(); }});
+
+function buildPrintReport(){
+  const order = [];
+  const sums = {};
+  REVIEWS.forEach(r=>{
+    if(!(r.version in sums)){ sums[r.version] = {total:0, n:0}; order.push(r.version); }
+    sums[r.version].total += r.star; sums[r.version].n += 1;
+  });
+  const avgs = order.map(v=>sums[v].total/sums[v].n);
+  const maxAvg = Math.max(...avgs);
+
+  const callouts = [];
+  for(let i=1;i<order.length;i++){
+    if(avgs[i-1]-avgs[i] >= 0.8){
+      callouts.push(`<div class="pr-callout">Rating dropped at v${order[i]}: ${avgs[i-1].toFixed(1)}★ (v${order[i-1]}) → ${avgs[i].toFixed(1)}★ (v${order[i]}).</div>`);
+    }
+  }
+  const counts = {};
+  REVIEWS.forEach(r=>r.issues.forEach(i=>counts[i]=(counts[i]||0)+1));
+  const topIssues = Object.entries(counts).sort((a,b)=>b[1]-a[1]);
+  if(topIssues[0]) callouts.push(`<div class="pr-callout">Most common complaint: "${label(topIssues[0][0])}" — ${topIssues[0][1]} of ${REVIEWS.length} sampled reviews.</div>`);
+  if(counts["encryption"]||counts["open-source"]) callouts.push(`<div class="pr-callout ok">Customers consistently cite open-source status and PGP/encryption support as strengths, even in mixed reviews.</div>`);
+
+  const trendRows = order.map((v,i)=>`
+    <div class="pr-trend-row">
+      <span style="width:50px;">v${v}</span>
+      <div class="pr-trend-bar" style="width:${(avgs[i]/maxAvg*220).toFixed(0)}px;"></div>
+      <span>${avgs[i].toFixed(1)}★ (${sums[v].n} reviews)</span>
+    </div>`).join("");
+
+  const issueRows = topIssues.slice(0,8).map(([k,c])=>`
+    <div class="pr-issue-row"><span>${label(k)}</span><span class="mono">${c}</span></div>`).join("");
+
+  const sampleReviews = REVIEWS.slice(0,8).map(r=>`
+    <div class="pr-review">
+      <div class="meta">v${r.version} · ${r.date} · ${"★".repeat(r.star)}${"☆".repeat(5-r.star)} · ${r.issues.map(label).join(", ")}</div>
+      <div>${r.text}</div>
+    </div>`).join("");
+
+  document.getElementById("printReport").innerHTML = `
+    <div class="pr-title">K9 Mail — Customer Feedback Report</div>
+    <div class="pr-sub">Generated ${new Date().toLocaleDateString()} · Source: Play Store reviews (data/raw/k9_reviews.json)</div>
+    <div class="pr-stats">
+      <div class="pr-stat"><div class="n">${REVIEWS.length}</div><div class="l">Reviews sampled</div></div>
+      <div class="pr-stat"><div class="n">${allIssues.length}</div><div class="l">Issue types tagged</div></div>
+      <div class="pr-stat"><div class="n">${order.length}</div><div class="l">App versions covered</div></div>
+    </div>
+    <div class="pr-h">Key takeaways</div>
+    ${callouts.join("")}
+    <div class="pr-h">Average rating by version</div>
+    ${trendRows}
+    <div class="pr-h">Top issues</div>
+    ${issueRows}
+    <div class="pr-h">Sample reviews</div>
+    ${sampleReviews}
+  `;
+}
+
+document.getElementById("exportPdfBtn").onclick = ()=>{
+  buildPrintReport();
+  window.print();
+};
+
+document.querySelectorAll(".coll-btn").forEach(b=>{
+  b.onclick = ()=>{
+    document.querySelectorAll(".coll-btn").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    state.coll = b.dataset.coll;
+  };
+});
+
+function renderTrend(){
+  // Average star rating per version, in chronological version order as they appear in REVIEWS
+  const order = [];
+  const sums = {};
+  REVIEWS.forEach(r=>{
+    if(!(r.version in sums)){ sums[r.version] = {total:0, n:0}; order.push(r.version); }
+    sums[r.version].total += r.star; sums[r.version].n += 1;
+  });
+  const cols = order.map(v=>({v, avg: sums[v].total/sums[v].n}));
+  document.getElementById("trendBars").innerHTML = cols.map(c=>{
+    const h = Math.max(8, (c.avg/5)*100);
+    const cls = c.avg < 2.5 ? "low" : c.avg < 3.8 ? "mid" : "";
+    return `<div class="trend-col">
+      <div class="trend-val">${c.avg.toFixed(1)}</div>
+      <div class="trend-bar ${cls}" style="height:${h}%"></div>
+      <div class="trend-lbl">v${c.v}</div>
+    </div>`;
+  }).join("");
+}
+
+function renderSummary(){
+  // Flag versions where avg rating drops notably vs. the version before it
+  const order = [];
+  const sums = {};
+  REVIEWS.forEach(r=>{
+    if(!(r.version in sums)){ sums[r.version] = {total:0, n:0}; order.push(r.version); }
+    sums[r.version].total += r.star; sums[r.version].n += 1;
+  });
+  const avgs = order.map(v=>sums[v].total/sums[v].n);
+  const cards = [];
+  for(let i=1;i<order.length;i++){
+    if(avgs[i-1]-avgs[i] >= 0.8){
+      cards.push({title:`Rating dropped at v${order[i]}`, body:`Average rating fell from ${avgs[i-1].toFixed(1)}★ (v${order[i-1]}) to ${avgs[i].toFixed(1)}★ (v${order[i]}). Worth checking release notes for that update.`, ok:false});
+    }
+  }
+  const counts = {};
+  REVIEWS.forEach(r=>r.issues.forEach(i=>counts[i]=(counts[i]||0)+1));
+  const topIssue = Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];
+  if(topIssue){
+    cards.push({title:`Most common complaint`, body:`“${label(topIssue[0])}” appears in ${topIssue[1]} of ${REVIEWS.length} sampled reviews.`, ok:false});
+  }
+  const liked = Object.entries(counts).find(([k])=>k==="encryption"||k==="open-source");
+  if(liked){
+    cards.push({title:`What customers like`, body:`Open source status and PGP/encryption support come up as positives even in mixed or negative reviews.`, ok:true});
+  }
+  document.getElementById("summaryStrip").innerHTML = cards.map(c=>`
+    <div class="summary-card ${c.ok?'ok':''}">
+      <div class="sc-title">${c.title}</div>
+      <div class="sc-body">${c.body}</div>
+    </div>
+  `).join("");
+}
+
+function render(){ renderFacets(); renderList(); renderDetail(); renderTrend(); renderSummary(); }
+render();
+</script>
+</body>
+</html>
