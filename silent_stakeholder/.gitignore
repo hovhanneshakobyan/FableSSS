@@ -7,11 +7,18 @@ env.sh
 __pycache__/
 *.pyc
 
-# Data. Both directories are SEPARATE git repos with their own remotes
-# (hovhanneshakobyan/FableSSS), so committing them here would record broken
-# submodule links and teammates would clone empty folders. Clone them directly.
-data/raw/
-data/qdrant/
+# Data is COMMITTED (~53MB): data/raw/ is the corpus, data/qdrant/ is the built
+# index. Both are in the repo so that `git clone && ./setup.sh && make ui` is
+# the whole setup — no second clone, and no 8,549-document re-embed.
+#
+# These were previously two nested git repos, which is why they used to be
+# ignored: `git add` on a directory containing .git records a gitlink, and
+# teammates clone an EMPTY folder with no error. Those .git directories have
+# been removed. If you ever restore one, re-add the ignore or the same silent
+# breakage comes back.
+#
+# Qdrant's advisory lock is per-process state, never content.
+data/qdrant/.lock
 
 # Derived and rebuildable: `make db ingest` regenerates these from data/raw.
 data/*.db

@@ -1,16 +1,28 @@
-anthropic>=0.40.0
+# Only what the code actually imports. Verified with a grep over kb/, gaps/,
+# agent/ and ui/ — every line below has at least one import; nothing else did.
+#
+# Removed 2026-08-01 because nothing imported them and they were breaking fresh
+# installs: sentence-transformers (pulls ~2GB of torch, and setup.sh smoke-tested
+# an import that was never even listed here), hdbscan (needs a C toolchain — the
+# likely reason this venv installed only partially), scikit-learn, anthropic,
+# jinja2, pandas. If a later stage needs one, add it back next to the import
+# that justifies it.
+
+# kb/ — vector index and the embedding model (bge-small, 384-dim, fetched once)
 qdrant-client[fastembed]>=1.18
-hdbscan>=0.8.38
-scikit-learn>=1.4
+
+# kb/cache.py is the only direct numpy user; qdrant-client needs it regardless
 numpy>=1.26
-pandas>=2.2
+
+# ui/ — the Findings + chat app
 streamlit>=1.38
-jinja2>=3.1
 
 # agent/ — ReAct chat over the KB
 langgraph>=1.2
 langchain-core>=1.5
-# free-tier providers; only the one you actually use needs to be installed
+
+# Free-tier providers. Only the one whose key you hold is needed at runtime;
+# all three are listed so `make chat` works with whichever you have.
 langchain-groq>=1.1
 langchain-google-genai>=4.3
 langchain-ollama>=1.1
