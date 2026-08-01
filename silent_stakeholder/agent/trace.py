@@ -16,6 +16,8 @@ import json
 # Which tools open the Qdrant client — see kb/search.py. The lexical tools scan
 # data/raw/*.json and never touch it, which is why counts stay reproducible by
 # hand with grep.
+ENGINE = {"top_gaps", "why_gap", "missed_gap"}
+
 SEMANTIC = {"search_reviews", "search_issues", "compare_vocabularies",
             "related_issues"}
 

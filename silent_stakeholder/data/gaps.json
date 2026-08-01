@@ -1,0 +1,3775 @@
+{
+ "gaps": [
+  {
+   "id": "security",
+   "need": "Need more password encryption options This app only supports MD5 encrypted passwords  and I need SHA512",
+   "quote": "Need more password encryption options This app only supports MD5 encrypted passwords  and I need SHA512",
+   "quote_cite": "rev:e930c1a2",
+   "quote_star": 2,
+   "label": "security",
+   "route": "latent",
+   "symptom_terms": [
+    "security",
+    "encrypt",
+    "encryption",
+    "pgp"
+   ],
+   "mechanism_terms": [
+    "keys",
+    "green",
+    "signing"
+   ],
+   "confidence": 60,
+   "score": {
+    "confidence": 60,
+    "raw": 60.1,
+    "E": {
+     "support": 0.921,
+     "dispersion": 0.671,
+     "friction": 0.688,
+     "quality": 0.507,
+     "E": 0.709
+    },
+    "L": {
+     "pii_norm": 0.49,
+     "recurrence": 0.188,
+     "mechanism": 1.0,
+     "epic_absence": 0.0,
+     "L": 0.4685
+    },
+    "penalties": [],
+    "formula": "round(100 * (0.55*E=0.709 + 0.45*L=0.4685)) - 0 penalties"
+   },
+   "verdict": "MISUNDERSTOOD",
+   "why": "|issues|=207, |reviews|=69, epics=12, stale=26/207, PII=1.96, bridge=48",
+   "reason": "the backlog engages this (207 issues) but in a different vocabulary: PII=1.96 with 48 documents witnessing both framings",
+   "metrics": {
+    "dead": false,
+    "n_reviews": 69,
+    "prevalence": 4.42,
+    "mean_star": 3.64,
+    "star_deficit": 0.21,
+    "latent_n": 38,
+    "latent_share": 0.551,
+    "mean_lambda": 0.587,
+    "happy_friction_share": 0.275,
+    "long_form_share": 0.623,
+    "f0_share": 0.391,
+    "months_hit": 17,
+    "max_share": 0.29,
+    "dispersion": 0.671,
+    "by_month": {
+     "2015-12": 3,
+     "2016-01": 2,
+     "2016-02": 2,
+     "2016-03": 4,
+     "2016-04": 5,
+     "2016-05": 2,
+     "2016-06": 3,
+     "2016-07": 3,
+     "2016-08": 2,
+     "2016-09": 5,
+     "2016-10": 3,
+     "2016-11": 3,
+     "2016-12": 5,
+     "2017-01": 20,
+     "2017-02": 3,
+     "2017-03": 2,
+     "2017-04": 2
+    },
+    "n_issues": 207,
+    "n_open": 26,
+    "stale_frac": 0.126,
+    "not_planned_frac": 0.01,
+    "needs_info_frac": 0.058,
+    "enhancement_frac": 0.237,
+    "median_days_open": 15,
+    "epics": [
+     "5.300",
+     "Composing messages",
+     "Design Overhaul",
+     "K-9 Mail 6.200",
+     "Mail synchronization",
+     "Onboarding",
+     "PGP/MIME",
+     "v5.108",
+     "v5.110",
+     "v5.200",
+     "v5.203",
+     "v5.204"
+    ],
+    "median_closed_at": "2017-01-17",
+    "recurrence": 0.188,
+    "polarity_symptom": 0.39,
+    "polarity_mechanism": 0.1,
+    "pii": 1.96,
+    "pii_norm": 0.49,
+    "bridge_n": 48,
+    "bridge": [
+     {
+      "cite": "k9#2997",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "keys"
+     },
+     {
+      "cite": "k9#2976",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2925",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2864",
+      "corpus": "k9_issues",
+      "symptom": "security",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2833",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2815",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2510",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "keys"
+     },
+     {
+      "cite": "k9#2375",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2258",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2183",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2175",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2164",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "keys"
+     }
+    ],
+    "control_ratio": 13.17,
+    "control_reading": "k9-specific",
+    "evidence_reviews": [
+     {
+      "cite": "rev:748e8dfc",
+      "star": 4,
+      "date": "2016-06-01",
+      "families": [
+       "F1",
+       "F2",
+       "F3",
+       "F5"
+      ],
+      "lam": 3.5,
+      "text": "Very good Been using it for years for my yahoo Gmail and Hotmail accounts. I have 2 step security on my Hotmail account which means I have to use an app password generated especially for k9. That used to work but since the new look outlook in may 2016 outlook just won't connect t"
+     },
+     {
+      "cite": "rev:6a4fc2a2",
+      "star": 1,
+      "date": "2016-02-23",
+      "families": [
+       "F3",
+       "F5",
+       "F6"
+      ],
+      "lam": 2.5,
+      "text": "WAS Great for multiple accounts No longer works with Gmail  app doesn't meet modern security standard according to Google. Shame too as I prefer this app's layout to Gmail app but looks like I no longer have that choice. Completely useless to me as is  so downgraded to 1 star  I'"
+     },
+     {
+      "cite": "rev:300192ec",
+      "star": 4,
+      "date": "2016-07-28",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Good But Needs PGP/MIME K-9 works well with OpenKeychain  but doesn't seem to support PGP/MIME-formatted email that Thunderbird with Enigmail produces."
+     },
+     {
+      "cite": "rev:03405286",
+      "star": 4,
+      "date": "2017-02-04",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Yahoo's new security update is not compatible??? Please fix. I really wish the app didn't have to download a set number of messages. If I delete a new email why do really old emails reappear so I have to mark them read - again  and again  and again? this isn't required for Yahoo "
+     },
+     {
+      "cite": "rev:72da7548",
+      "star": 5,
+      "date": "2016-06-04",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Decent... [EDITED] ...but way too much to go through to set up. Also  there seems to be no way to update your password once it's changed  other than uninstalling and reinstalling (which means going through the extensive setup again). EDIT: The set up is still too exhaustive  but "
+     },
+     {
+      "cite": "rev:07103d32",
+      "star": 5,
+      "date": "2016-01-21",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Gmail blocking it Google sent message to my backup secondary gmail address via android Google gmail app saying insecure app attempted email fetch so was not allowed. Google default security setting. Using link in their email I found box to tap to allow unverified app access. But "
+     },
+     {
+      "cite": "rev:685cb0b1",
+      "star": 5,
+      "date": "2017-01-02",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Secure and open source. Secure. Security is priority in my book and for now this App meets the requirements. Other high rated Apps like Aqua mail have analytics in their App. Blue Mail another high rated App has loop hole where your mail passes and can be held on their mail serve"
+     },
+     {
+      "cite": "rev:7ae8ae4c",
+      "star": 3,
+      "date": "2017-03-24",
+      "families": [
+       "F6"
+      ],
+      "lam": 1.0,
+      "text": "Encryption features get better. One important one missing though: Should allow to save messages unencrypted if the server is trusted. This option is crucial for more user friendly work. Also: opening messages got quite slow since some updates ago. If both issues were solved it wo"
+     },
+     {
+      "cite": "rev:e824f6ee",
+      "star": 4,
+      "date": "2016-10-26",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Very old fashioned. Needs polishing. Also google says it doesn't support latest security standards ( though it may be just google)."
+     },
+     {
+      "cite": "rev:043b84fd",
+      "star": 4,
+      "date": "2016-09-20",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Exchange Support? The UI could be modernised as well. It appeals to the open source  PGP/GPG market  and that's why I still happily use the app! Just wish I could use all my accounts with it."
+     },
+     {
+      "cite": "rev:43dc0264",
+      "star": 4,
+      "date": "2016-03-02",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great app. however  goo doesn't seem to like it and it can't be used with their g mail. claims due to security reasons. can that be fixed within this app  or is it really goo trying to force us to use their app?"
+     },
+     {
+      "cite": "rev:8481e395",
+      "star": 4,
+      "date": "2015-12-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Good mail app Like the PGP integration. Would be nice to be able to customise the LED color though"
+     }
+    ],
+    "evidence_issues": [
+     {
+      "cite": "k9#930",
+      "title": "iCalendar / Invitations support",
+      "state": "open",
+      "created_at": "2015-12-03",
+      "closed_at": null,
+      "days_open": 3893,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 21
+     },
+     {
+      "cite": "k9#942",
+      "title": "GPG/PGP signing key should be on identity not account",
+      "state": "open",
+      "created_at": "2015-12-10",
+      "closed_at": null,
+      "days_open": 3886,
+      "type": "enhancement",
+      "milestone": "PGP/MIME",
+      "comments": 71
+     },
+     {
+      "cite": "k9#1003",
+      "title": "S/MIME support",
+      "state": "open",
+      "created_at": "2016-01-07",
+      "closed_at": null,
+      "days_open": 3858,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 41
+     },
+     {
+      "cite": "k9#1215",
+      "title": "Display transport security of received email",
+      "state": "open",
+      "created_at": "2016-03-25",
+      "closed_at": null,
+      "days_open": 3780,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1231",
+      "title": "Add support for SCRAM-SHA1",
+      "state": "open",
+      "created_at": "2016-03-30",
+      "closed_at": null,
+      "days_open": 3775,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 16
+     },
+     {
+      "cite": "k9#1489",
+      "title": "UX for Import of unknown keys nonuniform",
+      "state": "open",
+      "created_at": "2016-07-07",
+      "closed_at": null,
+      "days_open": 3676,
+      "type": "enhancement",
+      "milestone": "PGP/MIME",
+      "comments": 1
+     },
+     {
+      "cite": "k9#1539",
+      "title": "Introduce foreign keys for database consistency",
+      "state": "open",
+      "created_at": "2016-08-03",
+      "closed_at": null,
+      "days_open": 3649,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1645",
+      "title": "Key detection is case sensitive",
+      "state": "open",
+      "created_at": "2016-09-29",
+      "closed_at": null,
+      "days_open": 3592,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1713",
+      "title": "Browsing a list of messages by HW arrow keys (like in folder list)",
+      "state": "open",
+      "created_at": "2016-10-12",
+      "closed_at": null,
+      "days_open": 3579,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1760",
+      "title": "try to lookup pgp-keys when sending new email",
+      "state": "open",
+      "created_at": "2016-10-27",
+      "closed_at": null,
+      "days_open": 3564,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 18
+     }
+    ]
+   },
+   "evidence": {
+    "reviews": [
+     {
+      "cite": "rev:748e8dfc",
+      "star": 4,
+      "date": "2016-06-01",
+      "families": [
+       "F1",
+       "F2",
+       "F3",
+       "F5"
+      ],
+      "lam": 3.5,
+      "text": "Very good Been using it for years for my yahoo Gmail and Hotmail accounts. I have 2 step security on my Hotmail account which means I have to use an app password generated especially for k9. That used to work but since the new look outlook in may 2016 outlook just won't connect t"
+     },
+     {
+      "cite": "rev:6a4fc2a2",
+      "star": 1,
+      "date": "2016-02-23",
+      "families": [
+       "F3",
+       "F5",
+       "F6"
+      ],
+      "lam": 2.5,
+      "text": "WAS Great for multiple accounts No longer works with Gmail  app doesn't meet modern security standard according to Google. Shame too as I prefer this app's layout to Gmail app but looks like I no longer have that choice. Completely useless to me as is  so downgraded to 1 star  I'"
+     },
+     {
+      "cite": "rev:300192ec",
+      "star": 4,
+      "date": "2016-07-28",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Good But Needs PGP/MIME K-9 works well with OpenKeychain  but doesn't seem to support PGP/MIME-formatted email that Thunderbird with Enigmail produces."
+     },
+     {
+      "cite": "rev:03405286",
+      "star": 4,
+      "date": "2017-02-04",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Yahoo's new security update is not compatible??? Please fix. I really wish the app didn't have to download a set number of messages. If I delete a new email why do really old emails reappear so I have to mark them read - again  and again  and again? this isn't required for Yahoo "
+     },
+     {
+      "cite": "rev:72da7548",
+      "star": 5,
+      "date": "2016-06-04",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Decent... [EDITED] ...but way too much to go through to set up. Also  there seems to be no way to update your password once it's changed  other than uninstalling and reinstalling (which means going through the extensive setup again). EDIT: The set up is still too exhaustive  but "
+     },
+     {
+      "cite": "rev:07103d32",
+      "star": 5,
+      "date": "2016-01-21",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Gmail blocking it Google sent message to my backup secondary gmail address via android Google gmail app saying insecure app attempted email fetch so was not allowed. Google default security setting. Using link in their email I found box to tap to allow unverified app access. But "
+     },
+     {
+      "cite": "rev:685cb0b1",
+      "star": 5,
+      "date": "2017-01-02",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Secure and open source. Secure. Security is priority in my book and for now this App meets the requirements. Other high rated Apps like Aqua mail have analytics in their App. Blue Mail another high rated App has loop hole where your mail passes and can be held on their mail serve"
+     },
+     {
+      "cite": "rev:7ae8ae4c",
+      "star": 3,
+      "date": "2017-03-24",
+      "families": [
+       "F6"
+      ],
+      "lam": 1.0,
+      "text": "Encryption features get better. One important one missing though: Should allow to save messages unencrypted if the server is trusted. This option is crucial for more user friendly work. Also: opening messages got quite slow since some updates ago. If both issues were solved it wo"
+     },
+     {
+      "cite": "rev:e824f6ee",
+      "star": 4,
+      "date": "2016-10-26",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Very old fashioned. Needs polishing. Also google says it doesn't support latest security standards ( though it may be just google)."
+     },
+     {
+      "cite": "rev:043b84fd",
+      "star": 4,
+      "date": "2016-09-20",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Exchange Support? The UI could be modernised as well. It appeals to the open source  PGP/GPG market  and that's why I still happily use the app! Just wish I could use all my accounts with it."
+     },
+     {
+      "cite": "rev:43dc0264",
+      "star": 4,
+      "date": "2016-03-02",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great app. however  goo doesn't seem to like it and it can't be used with their g mail. claims due to security reasons. can that be fixed within this app  or is it really goo trying to force us to use their app?"
+     },
+     {
+      "cite": "rev:8481e395",
+      "star": 4,
+      "date": "2015-12-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Good mail app Like the PGP integration. Would be nice to be able to customise the LED color though"
+     }
+    ],
+    "issues": [
+     {
+      "cite": "k9#930",
+      "title": "iCalendar / Invitations support",
+      "state": "open",
+      "created_at": "2015-12-03",
+      "closed_at": null,
+      "days_open": 3893,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 21
+     },
+     {
+      "cite": "k9#942",
+      "title": "GPG/PGP signing key should be on identity not account",
+      "state": "open",
+      "created_at": "2015-12-10",
+      "closed_at": null,
+      "days_open": 3886,
+      "type": "enhancement",
+      "milestone": "PGP/MIME",
+      "comments": 71
+     },
+     {
+      "cite": "k9#1003",
+      "title": "S/MIME support",
+      "state": "open",
+      "created_at": "2016-01-07",
+      "closed_at": null,
+      "days_open": 3858,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 41
+     },
+     {
+      "cite": "k9#1215",
+      "title": "Display transport security of received email",
+      "state": "open",
+      "created_at": "2016-03-25",
+      "closed_at": null,
+      "days_open": 3780,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1231",
+      "title": "Add support for SCRAM-SHA1",
+      "state": "open",
+      "created_at": "2016-03-30",
+      "closed_at": null,
+      "days_open": 3775,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 16
+     },
+     {
+      "cite": "k9#1489",
+      "title": "UX for Import of unknown keys nonuniform",
+      "state": "open",
+      "created_at": "2016-07-07",
+      "closed_at": null,
+      "days_open": 3676,
+      "type": "enhancement",
+      "milestone": "PGP/MIME",
+      "comments": 1
+     },
+     {
+      "cite": "k9#1539",
+      "title": "Introduce foreign keys for database consistency",
+      "state": "open",
+      "created_at": "2016-08-03",
+      "closed_at": null,
+      "days_open": 3649,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1645",
+      "title": "Key detection is case sensitive",
+      "state": "open",
+      "created_at": "2016-09-29",
+      "closed_at": null,
+      "days_open": 3592,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1713",
+      "title": "Browsing a list of messages by HW arrow keys (like in folder list)",
+      "state": "open",
+      "created_at": "2016-10-12",
+      "closed_at": null,
+      "days_open": 3579,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1760",
+      "title": "try to lookup pgp-keys when sending new email",
+      "state": "open",
+      "created_at": "2016-10-27",
+      "closed_at": null,
+      "days_open": 3564,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 18
+     }
+    ],
+    "bridge": [
+     {
+      "cite": "k9#2997",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "keys"
+     },
+     {
+      "cite": "k9#2976",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2925",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2864",
+      "corpus": "k9_issues",
+      "symptom": "security",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2833",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2815",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2510",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "keys"
+     },
+     {
+      "cite": "k9#2375",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2258",
+      "corpus": "k9_issues",
+      "symptom": "encrypt",
+      "mechanism": "green"
+     },
+     {
+      "cite": "k9#2183",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2175",
+      "corpus": "k9_issues",
+      "symptom": "pgp",
+      "mechanism": "signing"
+     },
+     {
+      "cite": "k9#2164",
+      "corpus": "k9_issues",
+      "symptom": "encryption",
+      "mechanism": "keys"
+     }
+    ]
+   },
+   "rank": 1
+  },
+  {
+   "id": "interface",
+   "need": "But it feels like it needs an interface overhaul.",
+   "quote": "But it feels like it needs an interface overhaul.",
+   "quote_cite": "rev:f7691659",
+   "quote_star": 3,
+   "label": "interface",
+   "route": "polarity",
+   "symptom_terms": [
+    "interface",
+    "layout",
+    "design"
+   ],
+   "mechanism_terms": [
+    "remove"
+   ],
+   "confidence": 56,
+   "score": {
+    "confidence": 56,
+    "raw": 65.9,
+    "E": {
+     "support": 0.93,
+     "dispersion": 0.716,
+     "friction": 0.59,
+     "quality": 0.541,
+     "E": 0.705
+    },
+    "L": {
+     "pii_norm": 1.0,
+     "recurrence": 0.014,
+     "mechanism": 1.0,
+     "epic_absence": 0.0,
+     "L": 0.6035
+    },
+    "penalties": [
+     {
+      "code": "control",
+      "cost": 10,
+      "why": "AntennaPod's backlog carries these terms at a similar rate (0.62x) — partly a platform artefact, not purely a K-9 gap"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.705 + 0.45*L=0.6035)) - 10 penalties"
+   },
+   "verdict": "MISUNDERSTOOD",
+   "why": "|issues|=87, |reviews|=72, epics=13, stale=11/87, PII=4.6, bridge=3",
+   "reason": "the backlog engages this (87 issues) but in a different vocabulary: PII=4.6 with 3 documents witnessing both framings",
+   "metrics": {
+    "dead": false,
+    "n_reviews": 72,
+    "prevalence": 4.62,
+    "mean_star": 3.62,
+    "star_deficit": 0.19,
+    "latent_n": 26,
+    "latent_share": 0.361,
+    "mean_lambda": 0.392,
+    "happy_friction_share": 0.236,
+    "long_form_share": 0.694,
+    "f0_share": 0.389,
+    "months_hit": 16,
+    "max_share": 0.194,
+    "dispersion": 0.716,
+    "by_month": {
+     "2015-12": 3,
+     "2016-01": 3,
+     "2016-02": 7,
+     "2016-03": 4,
+     "2016-04": 4,
+     "2016-05": 8,
+     "2016-06": 5,
+     "2016-07": 7,
+     "2016-08": 3,
+     "2016-09": 3,
+     "2016-10": 2,
+     "2016-11": 1,
+     "2016-12": 2,
+     "2017-01": 14,
+     "2017-03": 4,
+     "2017-04": 2
+    },
+    "n_issues": 87,
+    "n_open": 11,
+    "stale_frac": 0.126,
+    "not_planned_frac": 0.023,
+    "needs_info_frac": 0.046,
+    "enhancement_frac": 0.402,
+    "median_days_open": 27,
+    "epics": [
+     "5.300",
+     "5.800",
+     "Design Overhaul",
+     "Do it properly",
+     "K-9 Mail 6.600",
+     "MessageListFragment",
+     "Onboarding",
+     "PGP/MIME",
+     "v5.108",
+     "v5.110",
+     "v5.200",
+     "v5.203",
+     "v5.204"
+    ],
+    "median_closed_at": "2017-04-07",
+    "recurrence": 0.014,
+    "polarity_symptom": 2.18,
+    "polarity_mechanism": 0.09,
+    "pii": 4.6,
+    "pii_norm": 1.0,
+    "bridge_n": 3,
+    "bridge": [
+     {
+      "cite": "k9#2793",
+      "corpus": "k9_issues",
+      "symptom": "interface",
+      "mechanism": "remove"
+     },
+     {
+      "cite": "k9#1859",
+      "corpus": "k9_issues",
+      "symptom": "design",
+      "mechanism": "remove"
+     },
+     {
+      "cite": "k9#679",
+      "corpus": "k9_issues",
+      "symptom": "interface",
+      "mechanism": "remove"
+     }
+    ],
+    "control_ratio": 0.62,
+    "control_reading": "platform-wide",
+    "evidence_reviews": [
+     {
+      "cite": "rev:6a4fc2a2",
+      "star": 1,
+      "date": "2016-02-23",
+      "families": [
+       "F3",
+       "F5",
+       "F6"
+      ],
+      "lam": 2.5,
+      "text": "WAS Great for multiple accounts No longer works with Gmail  app doesn't meet modern security standard according to Google. Shame too as I prefer this app's layout to Gmail app but looks like I no longer have that choice. Completely useless to me as is  so downgraded to 1 star  I'"
+     },
+     {
+      "cite": "rev:1bcbed6f",
+      "star": 4,
+      "date": "2016-08-25",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best multi account mail app Much more configuration options than mymail  better visually too  can be dark background everywhere. Wish this existed for desktop PC as well. I would prefer k9mail over Thunderbird anytime! Don't like the dog association  what does k9 have to do with "
+     },
+     {
+      "cite": "rev:3c4eb953",
+      "star": 4,
+      "date": "2016-03-17",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Starring mail... Good app. Has some minor issues that are interface design oriented. Not sure if this is an Android exclusive problem  but starring email from initial screen is a pain. Will scroll up email instead of starring. Not a deal breaker. Also searching for old mail is no"
+     },
+     {
+      "cite": "rev:3fcb0ef3",
+      "star": 4,
+      "date": "2016-03-10",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best mail client for Android The design of the app looks somewhat old-fashioned and the configuration menu structure is more complicated than I would like it to be  but all things considered this is by far the best email client available for Android. I've tried Gmail  and liked i"
+     },
+     {
+      "cite": "rev:853115a2",
+      "star": 4,
+      "date": "2017-01-18",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best EMail Reader for FREE. Able to backup  migrate and restore settings - the most important thing compared to in-built email readers or even Microsoft Outlook or Google's own GMail client. However  latest update forces attachments to appear at the bottom - and a long email chai"
+     },
+     {
+      "cite": "rev:981ae678",
+      "star": 3,
+      "date": "2017-01-20",
+      "families": [
+       "F4",
+       "F5"
+      ],
+      "lam": 1.4,
+      "text": "I had used k9 for many years as there wasn't another email client nearly half as good or efficient  but the latest update has introduced a number changes that make it significantly slower to use. Bring back the \"mark all read\" in notification pull down  and let us disable warning"
+     },
+     {
+      "cite": "rev:119e2ee2",
+      "star": 2,
+      "date": "2016-09-02",
+      "families": [
+       "F1"
+      ],
+      "lam": 1.0,
+      "text": "Have to reinstall monthly Constantly deletes emails. I will open up the app and 3-4 days of emails will be gone. I have to reinstall it to get the emails back. It's ridiculous. The only reason I keep it is because it holds more email than my server and I like the layout."
+     },
+     {
+      "cite": "rev:1c761020",
+      "star": 4,
+      "date": "2016-08-24",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Good app  but can't click star to favorite Clicking star causes interface to scroll  even when scrollbar fades away. Otherwise  fantastic app. Used it since 2008  and wouldn't trade it."
+     },
+     {
+      "cite": "rev:2d6c4201",
+      "star": 4,
+      "date": "2016-08-02",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great features  outdated interface Only app that has all the features I need. I keep using it  even though the interface is still Android 2.x style..."
+     },
+     {
+      "cite": "rev:41bee457",
+      "star": 4,
+      "date": "2016-07-13",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Fully functional but dated (and generally poor) interface"
+     },
+     {
+      "cite": "rev:77ae1d96",
+      "star": 4,
+      "date": "2016-05-26",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great functionality but when it comes to UI and design  it's a complete failure. Android has moved on past Jellybean. Wake up guys  it's 2016. Also there are absolutely no gestures that could make life easier and the long-press-actions are too many"
+     },
+     {
+      "cite": "rev:9852e4dc",
+      "star": 4,
+      "date": "2016-05-09",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Awesome app  but unable to star emails I've used this ever since i got my first android phone over five years ago  and love it. The only thing that could be better is a fix for starring emails - when tapping the star on an email  it scrolls the interface instead."
+     }
+    ],
+    "evidence_issues": [
+     {
+      "cite": "k9#624",
+      "title": "Undo instead of confirmation for mail deletion",
+      "state": "open",
+      "created_at": "2015-04-27",
+      "closed_at": null,
+      "days_open": 4113,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 35
+     },
+     {
+      "cite": "k9#832",
+      "title": "RFC: Revise Store/Folder/Message interface",
+      "state": "open",
+      "created_at": "2015-10-05",
+      "closed_at": null,
+      "days_open": 3952,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#909",
+      "title": "Add interface to allow third-party app to add actions to a message",
+      "state": "open",
+      "created_at": "2015-11-20",
+      "closed_at": null,
+      "days_open": 3906,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#678",
+      "title": "Add support for folder shortcuts",
+      "state": "closed",
+      "created_at": "2015-06-10",
+      "closed_at": "2026-01-04",
+      "days_open": 3861,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1019",
+      "title": "Message font size too small",
+      "state": "open",
+      "created_at": "2016-01-12",
+      "closed_at": null,
+      "days_open": 3853,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#1432",
+      "title": "Add support for 'Read receipt'",
+      "state": "open",
+      "created_at": "2016-06-05",
+      "closed_at": null,
+      "days_open": 3708,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1508",
+      "title": "Add interface to allow Spam filtering by third-party apps",
+      "state": "open",
+      "created_at": "2016-07-17",
+      "closed_at": null,
+      "days_open": 3666,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 10
+     },
+     {
+      "cite": "k9#1887",
+      "title": "Feature request: Chat mode",
+      "state": "open",
+      "created_at": "2016-12-30",
+      "closed_at": null,
+      "days_open": 3500,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#2067",
+      "title": "Attachment indicator / scroll to bottom button",
+      "state": "open",
+      "created_at": "2017-01-16",
+      "closed_at": null,
+      "days_open": 3483,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 21
+     },
+     {
+      "cite": "k9#2361",
+      "title": "Drop support for accepting untrusted certificates",
+      "state": "open",
+      "created_at": "2017-03-08",
+      "closed_at": null,
+      "days_open": 3432,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 28
+     }
+    ]
+   },
+   "evidence": {
+    "reviews": [
+     {
+      "cite": "rev:6a4fc2a2",
+      "star": 1,
+      "date": "2016-02-23",
+      "families": [
+       "F3",
+       "F5",
+       "F6"
+      ],
+      "lam": 2.5,
+      "text": "WAS Great for multiple accounts No longer works with Gmail  app doesn't meet modern security standard according to Google. Shame too as I prefer this app's layout to Gmail app but looks like I no longer have that choice. Completely useless to me as is  so downgraded to 1 star  I'"
+     },
+     {
+      "cite": "rev:1bcbed6f",
+      "star": 4,
+      "date": "2016-08-25",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best multi account mail app Much more configuration options than mymail  better visually too  can be dark background everywhere. Wish this existed for desktop PC as well. I would prefer k9mail over Thunderbird anytime! Don't like the dog association  what does k9 have to do with "
+     },
+     {
+      "cite": "rev:3c4eb953",
+      "star": 4,
+      "date": "2016-03-17",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Starring mail... Good app. Has some minor issues that are interface design oriented. Not sure if this is an Android exclusive problem  but starring email from initial screen is a pain. Will scroll up email instead of starring. Not a deal breaker. Also searching for old mail is no"
+     },
+     {
+      "cite": "rev:3fcb0ef3",
+      "star": 4,
+      "date": "2016-03-10",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best mail client for Android The design of the app looks somewhat old-fashioned and the configuration menu structure is more complicated than I would like it to be  but all things considered this is by far the best email client available for Android. I've tried Gmail  and liked i"
+     },
+     {
+      "cite": "rev:853115a2",
+      "star": 4,
+      "date": "2017-01-18",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Best EMail Reader for FREE. Able to backup  migrate and restore settings - the most important thing compared to in-built email readers or even Microsoft Outlook or Google's own GMail client. However  latest update forces attachments to appear at the bottom - and a long email chai"
+     },
+     {
+      "cite": "rev:981ae678",
+      "star": 3,
+      "date": "2017-01-20",
+      "families": [
+       "F4",
+       "F5"
+      ],
+      "lam": 1.4,
+      "text": "I had used k9 for many years as there wasn't another email client nearly half as good or efficient  but the latest update has introduced a number changes that make it significantly slower to use. Bring back the \"mark all read\" in notification pull down  and let us disable warning"
+     },
+     {
+      "cite": "rev:119e2ee2",
+      "star": 2,
+      "date": "2016-09-02",
+      "families": [
+       "F1"
+      ],
+      "lam": 1.0,
+      "text": "Have to reinstall monthly Constantly deletes emails. I will open up the app and 3-4 days of emails will be gone. I have to reinstall it to get the emails back. It's ridiculous. The only reason I keep it is because it holds more email than my server and I like the layout."
+     },
+     {
+      "cite": "rev:1c761020",
+      "star": 4,
+      "date": "2016-08-24",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Good app  but can't click star to favorite Clicking star causes interface to scroll  even when scrollbar fades away. Otherwise  fantastic app. Used it since 2008  and wouldn't trade it."
+     },
+     {
+      "cite": "rev:2d6c4201",
+      "star": 4,
+      "date": "2016-08-02",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great features  outdated interface Only app that has all the features I need. I keep using it  even though the interface is still Android 2.x style..."
+     },
+     {
+      "cite": "rev:41bee457",
+      "star": 4,
+      "date": "2016-07-13",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Fully functional but dated (and generally poor) interface"
+     },
+     {
+      "cite": "rev:77ae1d96",
+      "star": 4,
+      "date": "2016-05-26",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great functionality but when it comes to UI and design  it's a complete failure. Android has moved on past Jellybean. Wake up guys  it's 2016. Also there are absolutely no gestures that could make life easier and the long-press-actions are too many"
+     },
+     {
+      "cite": "rev:9852e4dc",
+      "star": 4,
+      "date": "2016-05-09",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Awesome app  but unable to star emails I've used this ever since i got my first android phone over five years ago  and love it. The only thing that could be better is a fix for starring emails - when tapping the star on an email  it scrolls the interface instead."
+     }
+    ],
+    "issues": [
+     {
+      "cite": "k9#624",
+      "title": "Undo instead of confirmation for mail deletion",
+      "state": "open",
+      "created_at": "2015-04-27",
+      "closed_at": null,
+      "days_open": 4113,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 35
+     },
+     {
+      "cite": "k9#832",
+      "title": "RFC: Revise Store/Folder/Message interface",
+      "state": "open",
+      "created_at": "2015-10-05",
+      "closed_at": null,
+      "days_open": 3952,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#909",
+      "title": "Add interface to allow third-party app to add actions to a message",
+      "state": "open",
+      "created_at": "2015-11-20",
+      "closed_at": null,
+      "days_open": 3906,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#678",
+      "title": "Add support for folder shortcuts",
+      "state": "closed",
+      "created_at": "2015-06-10",
+      "closed_at": "2026-01-04",
+      "days_open": 3861,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1019",
+      "title": "Message font size too small",
+      "state": "open",
+      "created_at": "2016-01-12",
+      "closed_at": null,
+      "days_open": 3853,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#1432",
+      "title": "Add support for 'Read receipt'",
+      "state": "open",
+      "created_at": "2016-06-05",
+      "closed_at": null,
+      "days_open": 3708,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1508",
+      "title": "Add interface to allow Spam filtering by third-party apps",
+      "state": "open",
+      "created_at": "2016-07-17",
+      "closed_at": null,
+      "days_open": 3666,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 10
+     },
+     {
+      "cite": "k9#1887",
+      "title": "Feature request: Chat mode",
+      "state": "open",
+      "created_at": "2016-12-30",
+      "closed_at": null,
+      "days_open": 3500,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#2067",
+      "title": "Attachment indicator / scroll to bottom button",
+      "state": "open",
+      "created_at": "2017-01-16",
+      "closed_at": null,
+      "days_open": 3483,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 21
+     },
+     {
+      "cite": "k9#2361",
+      "title": "Drop support for accepting untrusted certificates",
+      "state": "open",
+      "created_at": "2017-03-08",
+      "closed_at": null,
+      "days_open": 3432,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 28
+     }
+    ],
+    "bridge": [
+     {
+      "cite": "k9#2793",
+      "corpus": "k9_issues",
+      "symptom": "interface",
+      "mechanism": "remove"
+     },
+     {
+      "cite": "k9#1859",
+      "corpus": "k9_issues",
+      "symptom": "design",
+      "mechanism": "remove"
+     },
+     {
+      "cite": "k9#679",
+      "corpus": "k9_issues",
+      "symptom": "interface",
+      "mechanism": "remove"
+     }
+    ]
+   },
+   "rank": 2
+  },
+  {
+   "id": "swipe",
+   "need": "There should be swipe to delete or mark read  etc.",
+   "quote": "There should be swipe to delete or mark read  etc.",
+   "quote_cite": "rev:d43709e4",
+   "quote_star": 3,
+   "label": "swipe",
+   "route": "latent",
+   "symptom_terms": [
+    "swipe",
+    "swiping",
+    "gesture"
+   ],
+   "mechanism_terms": [
+    "mailing",
+    "left"
+   ],
+   "confidence": 55,
+   "score": {
+    "confidence": 55,
+    "raw": 64.6,
+    "E": {
+     "support": 0.638,
+     "dispersion": 0.691,
+     "friction": 0.973,
+     "quality": 0.583,
+     "E": 0.7185
+    },
+    "L": {
+     "pii_norm": 0.877,
+     "recurrence": 0.0,
+     "mechanism": 1.0,
+     "epic_absence": 0.0,
+     "L": 0.557
+    },
+    "penalties": [
+     {
+      "code": "control",
+      "cost": 10,
+      "why": "AntennaPod's backlog carries these terms at a similar rate (0.58x) — partly a platform artefact, not purely a K-9 gap"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.7185 + 0.45*L=0.557)) - 10 penalties"
+   },
+   "verdict": "UNDER-PRIORITIZED",
+   "why": "|issues|=81, |reviews|=18, epics=9, stale=9/81, PII=3.51, bridge=8",
+   "reason": "[demoted: only the 2 strongest framing gaps are reported as MISUNDERSTOOD] the backlog engages this (81 issues) but in a different vocabulary: PII=3.51 with 8 documents witnessing both framings",
+   "metrics": {
+    "dead": false,
+    "n_reviews": 18,
+    "prevalence": 1.15,
+    "mean_star": 3.44,
+    "star_deficit": 0.01,
+    "latent_n": 14,
+    "latent_share": 0.778,
+    "mean_lambda": 0.883,
+    "happy_friction_share": 0.389,
+    "long_form_share": 0.833,
+    "f0_share": 0.333,
+    "months_hit": 14,
+    "max_share": 0.111,
+    "dispersion": 0.691,
+    "by_month": {
+     "2015-12": 1,
+     "2016-01": 2,
+     "2016-02": 1,
+     "2016-03": 1,
+     "2016-04": 1,
+     "2016-05": 1,
+     "2016-07": 1,
+     "2016-10": 1,
+     "2016-11": 2,
+     "2016-12": 1,
+     "2017-01": 1,
+     "2017-02": 2,
+     "2017-03": 2,
+     "2017-04": 1
+    },
+    "n_issues": 81,
+    "n_open": 9,
+    "stale_frac": 0.111,
+    "not_planned_frac": 0.012,
+    "needs_info_frac": 0.037,
+    "enhancement_frac": 0.309,
+    "median_days_open": 90,
+    "epics": [
+     "5.600",
+     "5.800",
+     "Design Overhaul",
+     "K-9 Mail 6.400",
+     "Mail synchronization",
+     "Notifications",
+     "Onboarding",
+     "v5.200",
+     "v5.202"
+    ],
+    "median_closed_at": "2017-10-18",
+    "recurrence": 0.0,
+    "polarity_symptom": 1.25,
+    "polarity_mechanism": 0.11,
+    "pii": 3.51,
+    "pii_norm": 0.877,
+    "bridge_n": 8,
+    "bridge": [
+     {
+      "cite": "k9#2980",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#2842",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "mailing"
+     },
+     {
+      "cite": "k9#2807",
+      "corpus": "k9_issues",
+      "symptom": "swiping",
+      "mechanism": "mailing"
+     },
+     {
+      "cite": "k9#2605",
+      "corpus": "k9_issues",
+      "symptom": "swiping",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#2064",
+      "corpus": "k9_issues",
+      "symptom": "gesture",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#1363",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#1426",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "rev:686075b7",
+      "corpus": "k9_reviews",
+      "symptom": "swipe",
+      "mechanism": "left"
+     }
+    ],
+    "control_ratio": 0.58,
+    "control_reading": "platform-wide",
+    "evidence_reviews": [
+     {
+      "cite": "rev:c97dcc82",
+      "star": 4,
+      "date": "2015-12-01",
+      "families": [
+       "F2",
+       "F6"
+      ],
+      "lam": 2.0,
+      "text": "Swipe function Really like this app but would be 5* awesome if in the next release you could add a swipe to delete function and a number by the desktop icon saying how many new emails have arrived. Thanks and keep up the good work!"
+     },
+     {
+      "cite": "rev:7611d2a9",
+      "star": 3,
+      "date": "2016-05-31",
+      "families": [
+       "F1",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "This app used to be the best IMAP mail reader on android. But with two major problems  it has became quite useless on android ≥ 5 : - no way to “bounce” mail (redirect with full headers unchanged) ; - incredibly slooooooow to display mails. More than 1\" to display a mail  or to t"
+     },
+     {
+      "cite": "rev:14090719",
+      "star": 3,
+      "date": "2017-02-24",
+      "families": [
+       "F1",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "I've been using this app for years. Recently the notifcation action \"mark as read\" doesn't eliminate the notification as it used to. It still does mark as read in the inbox  but the notification doesn't go away  and I have to manually swipe it away after clicking mark as read."
+     },
+     {
+      "cite": "rev:4506f8da",
+      "star": 5,
+      "date": "2016-01-05",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Great to use I use gmail as my primary mail app  but my university mail won't work with it. This is an excellent alternative that is easy to use and quite similar. Although I do keep forgetting that swipe has a different effect for each."
+     },
+     {
+      "cite": "rev:43e2fce4",
+      "star": 4,
+      "date": "2016-07-10",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Limited Storage? This app is for you! Like the app nice control over everything  but needs swipe to delete and most importantly printing added."
+     },
+     {
+      "cite": "rev:686075b7",
+      "star": 4,
+      "date": "2016-02-28",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Like it  but I miss SWIPE Please add swipe to archive/delete (left/right swipe). That simple feature would be awesome. The UI is ugly but functional. Otherwise an awesome app!"
+     },
+     {
+      "cite": "rev:0cd411c9",
+      "star": 4,
+      "date": "2016-01-08",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Powerful  not pretty Rock solid IMAP. Fast. Small. But none of the interface niceness (swipe to delete) I've come to love. Also  I'm not a fan of Dr Who so the constant k9 logo seems a waste."
+     },
+     {
+      "cite": "rev:a5d23331",
+      "star": 4,
+      "date": "2016-11-27",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great app Only thing missing for me is the ability to swipe between emails which makes me take a star away"
+     },
+     {
+      "cite": "rev:cc351632",
+      "star": 4,
+      "date": "2017-03-10",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "One of the best email clients but just needs a material design update and swipe added."
+     },
+     {
+      "cite": "rev:f92d787f",
+      "star": 2,
+      "date": "2016-10-03",
+      "families": [
+       "F3"
+      ],
+      "lam": 0.9,
+      "text": "Used to be great It keeps losing my account details so I have to set things up from scratch constantly. They also removed swipe gestures which I used all the time. Guess I'm looking for a new mail client again."
+     },
+     {
+      "cite": "rev:e72906a0",
+      "star": 4,
+      "date": "2017-03-20",
+      "families": [
+       "F4"
+      ],
+      "lam": 0.8,
+      "text": "Used on S3mini for 3 years  S4mini 3 years  now S5mini  Works well on all. Shame no 'Swipe to Delete' tho'."
+     },
+     {
+      "cite": "rev:dec27899",
+      "star": 2,
+      "date": "2016-11-08",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Push not great. Swipe not existing. Used it a few years ago. Went to Microsofts. Came back because of SD storage..used it for a week. The push notifications often don't come through Maybe only 80%. Outlook and Gmail 100%. Sometimes polling gets stuck and won't stop until you forc"
+     }
+    ],
+    "evidence_issues": [
+     {
+      "cite": "k9#925",
+      "title": "\"reply all\" should case normalize addresses",
+      "state": "open",
+      "created_at": "2015-12-02",
+      "closed_at": null,
+      "days_open": 3894,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1035",
+      "title": "Feature Request: \"Always Show Pictures for address/domain\"",
+      "state": "open",
+      "created_at": "2016-01-25",
+      "closed_at": null,
+      "days_open": 3840,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 11
+     },
+     {
+      "cite": "k9#1066",
+      "title": "Optimize power consumption in situations with intermittent/bad connectivity",
+      "state": "open",
+      "created_at": "2016-02-03",
+      "closed_at": null,
+      "days_open": 3831,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     },
+     {
+      "cite": "k9#1353",
+      "title": "Feature Request: Ignore Threads",
+      "state": "open",
+      "created_at": "2016-05-04",
+      "closed_at": null,
+      "days_open": 3740,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1713",
+      "title": "Browsing a list of messages by HW arrow keys (like in folder list)",
+      "state": "open",
+      "created_at": "2016-10-12",
+      "closed_at": null,
+      "days_open": 3579,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1980",
+      "title": "Provide a message when a message list is empty",
+      "state": "open",
+      "created_at": "2017-01-05",
+      "closed_at": null,
+      "days_open": 3494,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#2227",
+      "title": "request: only care about pgp mail.",
+      "state": "open",
+      "created_at": "2017-02-10",
+      "closed_at": null,
+      "days_open": 3458,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 9
+     },
+     {
+      "cite": "k9#2375",
+      "title": "Makes PGP sign-only mails very difficult",
+      "state": "open",
+      "created_at": "2017-03-11",
+      "closed_at": null,
+      "days_open": 3429,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 22
+     },
+     {
+      "cite": "k9#1903",
+      "title": "Fade-in animation when opening message plays even when animations are disabled",
+      "state": "closed",
+      "created_at": "2017-01-01",
+      "closed_at": "2026-05-04",
+      "days_open": 3410,
+      "type": "bug",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#2629",
+      "title": "[Feature Request] 3-Pane View",
+      "state": "open",
+      "created_at": "2017-07-17",
+      "closed_at": null,
+      "days_open": 3301,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 4
+     }
+    ]
+   },
+   "evidence": {
+    "reviews": [
+     {
+      "cite": "rev:c97dcc82",
+      "star": 4,
+      "date": "2015-12-01",
+      "families": [
+       "F2",
+       "F6"
+      ],
+      "lam": 2.0,
+      "text": "Swipe function Really like this app but would be 5* awesome if in the next release you could add a swipe to delete function and a number by the desktop icon saying how many new emails have arrived. Thanks and keep up the good work!"
+     },
+     {
+      "cite": "rev:7611d2a9",
+      "star": 3,
+      "date": "2016-05-31",
+      "families": [
+       "F1",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "This app used to be the best IMAP mail reader on android. But with two major problems  it has became quite useless on android ≥ 5 : - no way to “bounce” mail (redirect with full headers unchanged) ; - incredibly slooooooow to display mails. More than 1\" to display a mail  or to t"
+     },
+     {
+      "cite": "rev:14090719",
+      "star": 3,
+      "date": "2017-02-24",
+      "families": [
+       "F1",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "I've been using this app for years. Recently the notifcation action \"mark as read\" doesn't eliminate the notification as it used to. It still does mark as read in the inbox  but the notification doesn't go away  and I have to manually swipe it away after clicking mark as read."
+     },
+     {
+      "cite": "rev:4506f8da",
+      "star": 5,
+      "date": "2016-01-05",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Great to use I use gmail as my primary mail app  but my university mail won't work with it. This is an excellent alternative that is easy to use and quite similar. Although I do keep forgetting that swipe has a different effect for each."
+     },
+     {
+      "cite": "rev:43e2fce4",
+      "star": 4,
+      "date": "2016-07-10",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Limited Storage? This app is for you! Like the app nice control over everything  but needs swipe to delete and most importantly printing added."
+     },
+     {
+      "cite": "rev:686075b7",
+      "star": 4,
+      "date": "2016-02-28",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Like it  but I miss SWIPE Please add swipe to archive/delete (left/right swipe). That simple feature would be awesome. The UI is ugly but functional. Otherwise an awesome app!"
+     },
+     {
+      "cite": "rev:0cd411c9",
+      "star": 4,
+      "date": "2016-01-08",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Powerful  not pretty Rock solid IMAP. Fast. Small. But none of the interface niceness (swipe to delete) I've come to love. Also  I'm not a fan of Dr Who so the constant k9 logo seems a waste."
+     },
+     {
+      "cite": "rev:a5d23331",
+      "star": 4,
+      "date": "2016-11-27",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Great app Only thing missing for me is the ability to swipe between emails which makes me take a star away"
+     },
+     {
+      "cite": "rev:cc351632",
+      "star": 4,
+      "date": "2017-03-10",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "One of the best email clients but just needs a material design update and swipe added."
+     },
+     {
+      "cite": "rev:f92d787f",
+      "star": 2,
+      "date": "2016-10-03",
+      "families": [
+       "F3"
+      ],
+      "lam": 0.9,
+      "text": "Used to be great It keeps losing my account details so I have to set things up from scratch constantly. They also removed swipe gestures which I used all the time. Guess I'm looking for a new mail client again."
+     },
+     {
+      "cite": "rev:e72906a0",
+      "star": 4,
+      "date": "2017-03-20",
+      "families": [
+       "F4"
+      ],
+      "lam": 0.8,
+      "text": "Used on S3mini for 3 years  S4mini 3 years  now S5mini  Works well on all. Shame no 'Swipe to Delete' tho'."
+     },
+     {
+      "cite": "rev:dec27899",
+      "star": 2,
+      "date": "2016-11-08",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Push not great. Swipe not existing. Used it a few years ago. Went to Microsofts. Came back because of SD storage..used it for a week. The push notifications often don't come through Maybe only 80%. Outlook and Gmail 100%. Sometimes polling gets stuck and won't stop until you forc"
+     }
+    ],
+    "issues": [
+     {
+      "cite": "k9#925",
+      "title": "\"reply all\" should case normalize addresses",
+      "state": "open",
+      "created_at": "2015-12-02",
+      "closed_at": null,
+      "days_open": 3894,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1035",
+      "title": "Feature Request: \"Always Show Pictures for address/domain\"",
+      "state": "open",
+      "created_at": "2016-01-25",
+      "closed_at": null,
+      "days_open": 3840,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 11
+     },
+     {
+      "cite": "k9#1066",
+      "title": "Optimize power consumption in situations with intermittent/bad connectivity",
+      "state": "open",
+      "created_at": "2016-02-03",
+      "closed_at": null,
+      "days_open": 3831,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     },
+     {
+      "cite": "k9#1353",
+      "title": "Feature Request: Ignore Threads",
+      "state": "open",
+      "created_at": "2016-05-04",
+      "closed_at": null,
+      "days_open": 3740,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1713",
+      "title": "Browsing a list of messages by HW arrow keys (like in folder list)",
+      "state": "open",
+      "created_at": "2016-10-12",
+      "closed_at": null,
+      "days_open": 3579,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 0
+     },
+     {
+      "cite": "k9#1980",
+      "title": "Provide a message when a message list is empty",
+      "state": "open",
+      "created_at": "2017-01-05",
+      "closed_at": null,
+      "days_open": 3494,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#2227",
+      "title": "request: only care about pgp mail.",
+      "state": "open",
+      "created_at": "2017-02-10",
+      "closed_at": null,
+      "days_open": 3458,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 9
+     },
+     {
+      "cite": "k9#2375",
+      "title": "Makes PGP sign-only mails very difficult",
+      "state": "open",
+      "created_at": "2017-03-11",
+      "closed_at": null,
+      "days_open": 3429,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 22
+     },
+     {
+      "cite": "k9#1903",
+      "title": "Fade-in animation when opening message plays even when animations are disabled",
+      "state": "closed",
+      "created_at": "2017-01-01",
+      "closed_at": "2026-05-04",
+      "days_open": 3410,
+      "type": "bug",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#2629",
+      "title": "[Feature Request] 3-Pane View",
+      "state": "open",
+      "created_at": "2017-07-17",
+      "closed_at": null,
+      "days_open": 3301,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 4
+     }
+    ],
+    "bridge": [
+     {
+      "cite": "k9#2980",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#2842",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "mailing"
+     },
+     {
+      "cite": "k9#2807",
+      "corpus": "k9_issues",
+      "symptom": "swiping",
+      "mechanism": "mailing"
+     },
+     {
+      "cite": "k9#2605",
+      "corpus": "k9_issues",
+      "symptom": "swiping",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#2064",
+      "corpus": "k9_issues",
+      "symptom": "gesture",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#1363",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "k9#1426",
+      "corpus": "k9_issues",
+      "symptom": "swipe",
+      "mechanism": "left"
+     },
+     {
+      "cite": "rev:686075b7",
+      "corpus": "k9_reviews",
+      "symptom": "swipe",
+      "mechanism": "left"
+     }
+    ]
+   },
+   "rank": 3
+  },
+  {
+   "id": "hotmail",
+   "need": "No Hotmail At the very start it states the the majority of free hotmail accounts won't work.",
+   "quote": "No Hotmail At the very start it states the the majority of free hotmail accounts won't work.",
+   "quote_cite": "rev:b1d88e44",
+   "quote_star": 1,
+   "label": "hotmail",
+   "route": "polarity",
+   "symptom_terms": [
+    "hotmail"
+   ],
+   "mechanism_terms": [
+    "microsoft"
+   ],
+   "confidence": 57,
+   "score": {
+    "confidence": 57,
+    "raw": 57.1,
+    "E": {
+     "support": 0.66,
+     "dispersion": 0.417,
+     "friction": 0.93,
+     "quality": 0.725,
+     "E": 0.6951
+    },
+    "L": {
+     "pii_norm": 0.485,
+     "recurrence": 0.0,
+     "mechanism": 1.0,
+     "epic_absence": 0.0,
+     "L": 0.4197
+    },
+    "penalties": [],
+    "formula": "round(100 * (0.55*E=0.6951 + 0.45*L=0.4197)) - 0 penalties"
+   },
+   "verdict": "UNDER-PRIORITIZED",
+   "why": "|issues|=27, |reviews|=20, epics=2, stale=1/27, PII=1.94, bridge=6",
+   "reason": "[demoted: only the 2 strongest framing gaps are reported as MISUNDERSTOOD] the backlog engages this (27 issues) but in a different vocabulary: PII=1.94 with 6 documents witnessing both framings",
+   "metrics": {
+    "dead": false,
+    "n_reviews": 20,
+    "prevalence": 1.28,
+    "mean_star": 2.5,
+    "star_deficit": -0.93,
+    "latent_n": 9,
+    "latent_share": 0.45,
+    "mean_lambda": 0.44,
+    "happy_friction_share": 0.05,
+    "long_form_share": 0.75,
+    "f0_share": 0.7,
+    "months_hit": 10,
+    "max_share": 0.25,
+    "dispersion": 0.417,
+    "by_month": {
+     "2016-03": 1,
+     "2016-04": 3,
+     "2016-05": 4,
+     "2016-06": 1,
+     "2016-08": 1,
+     "2016-10": 1,
+     "2016-11": 2,
+     "2017-02": 1,
+     "2017-03": 5,
+     "2017-04": 1
+    },
+    "n_issues": 27,
+    "n_open": 1,
+    "stale_frac": 0.037,
+    "not_planned_frac": 0.0,
+    "needs_info_frac": 0.111,
+    "enhancement_frac": 0.333,
+    "median_days_open": 14,
+    "epics": [
+     "K-9 Mail 6.200",
+     "Onboarding"
+    ],
+    "median_closed_at": "2017-07-25",
+    "recurrence": 0.0,
+    "polarity_symptom": 1.99,
+    "polarity_mechanism": 0.52,
+    "pii": 1.94,
+    "pii_norm": 0.485,
+    "bridge_n": 6,
+    "bridge": [
+     {
+      "cite": "k9#3007",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#2628",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#2620",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#1753",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "rev:b1e78265",
+      "corpus": "k9_reviews",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "rev:0a6f3d9b",
+      "corpus": "k9_reviews",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     }
+    ],
+    "control_ratio": null,
+    "control_reading": "absent in control",
+    "evidence_reviews": [
+     {
+      "cite": "rev:748e8dfc",
+      "star": 4,
+      "date": "2016-06-01",
+      "families": [
+       "F1",
+       "F2",
+       "F3",
+       "F5"
+      ],
+      "lam": 3.5,
+      "text": "Very good Been using it for years for my yahoo Gmail and Hotmail accounts. I have 2 step security on my Hotmail account which means I have to use an app password generated especially for k9. That used to work but since the new look outlook in may 2016 outlook just won't connect t"
+     },
+     {
+      "cite": "rev:74a374b3",
+      "star": 1,
+      "date": "2017-03-28",
+      "families": [
+       "F3"
+      ],
+      "lam": 0.9,
+      "text": "Been great until three days ago and it just stopped working. Rebooted phone. Reinstalled. Nothing. It goes to load messages from hotmail and the progress wheel just spins and spins...nothing."
+     },
+     {
+      "cite": "rev:2027f49d",
+      "star": 2,
+      "date": "2016-08-17",
+      "families": [
+       "F4"
+      ],
+      "lam": 0.8,
+      "text": "Have used it for years but now too buggy Over the last 3 or 4 months my Hotmail that I delete comes back randomly as new mail (I've deleted some mail 10 or 12 times over 4 months) and now all of the emails i had today have disappeared after I switched my phone off for a flight. C"
+     },
+     {
+      "cite": "rev:e8bb3f67",
+      "star": 1,
+      "date": "2017-03-20",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "I have configured gmail account but I can't add second account such as Hotmail. No help or instructions available how to add second account. Uninstalling."
+     },
+     {
+      "cite": "rev:d801f460",
+      "star": 2,
+      "date": "2016-11-20",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Won't work with Yahoo or Gmail With Yahoo and Gmail I get not the right user name or password. Tried web address for problems no place to send issue request. Works go on pop3 and Hotmail. Will change star if fixed."
+     },
+     {
+      "cite": "rev:e907b5d0",
+      "star": 3,
+      "date": "2016-10-24",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Push mail do not work... It is good interface  but push nail do not work and dep end entirely on polling. Is there any guide to do so? I do not remember  but proably I saw a screen during installation that it do not support the popular email like hotmail  yahoo  gmail etc.... Any"
+     },
+     {
+      "cite": "rev:7661666b",
+      "star": 4,
+      "date": "2017-02-10",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "If you have several different email accounts e.g. hotmail gmail yahoo this is the app for you. Latest update can forget read messages e.g. it might decide a couple of previously read mails are unread. This continues to be faulty."
+     },
+     {
+      "cite": "rev:0a6f3d9b",
+      "star": 4,
+      "date": "2017-04-26",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "I know Hotmail/Microsoft seem to be having server problems  so I won't blame the slowness on K-9. I just think Blue Mail has better features for me  so I'm switching."
+     },
+     {
+      "cite": "rev:b3a1405e",
+      "star": 5,
+      "date": "2016-04-29",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Loving it so far Works well for hotmail/Outlook"
+     },
+     {
+      "cite": "rev:b1d88e44",
+      "star": 1,
+      "date": "2016-05-02",
+      "families": [],
+      "lam": 0,
+      "text": "No Hotmail At the very start it states the the majority of free hotmail accounts won't work. I use hotmail almost exclusively. A lot of people do. I like that the developers don't mind reviews but want a chance to fix a problem. Only thing is the app itself says it doesn't work. "
+     },
+     {
+      "cite": "rev:f21604f0",
+      "star": 1,
+      "date": "2016-04-07",
+      "families": [],
+      "lam": 0,
+      "text": "No Hotmail support You know about this restriction ONLY after downloading  installing and giving away your privacy to this piece of crapware and spyware trash. Why developers don't mention it in the description is to grab as many as possible fake installations. Uninstalled straig"
+     },
+     {
+      "cite": "rev:1b3d25a0",
+      "star": 1,
+      "date": "2016-03-23",
+      "families": [],
+      "lam": 0,
+      "text": "UNINSTALLED: Hoping that this would be a good replacement for the email client that came with the phone  However  when I tried to set it up  both Google and Yahoo servers complained about the lack of security. Software states that it will not connect to HotMail. Sorry to uninstal"
+     }
+    ],
+    "evidence_issues": [
+     {
+      "cite": "k9#2819",
+      "title": "Add a way to download only the full headers and not the rest of the content",
+      "state": "open",
+      "created_at": "2017-10-05",
+      "closed_at": null,
+      "days_open": 3221,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#865",
+      "title": "Feature Request: Support Mozilla autoconfig",
+      "state": "closed",
+      "created_at": "2015-10-24",
+      "closed_at": "2023-11-07",
+      "days_open": 2936,
+      "type": "enhancement",
+      "milestone": "Onboarding",
+      "comments": 18
+     },
+     {
+      "cite": "k9#2530",
+      "title": "My tasks about improving account setup in GSoC 2017",
+      "state": "closed",
+      "created_at": "2017-05-08",
+      "closed_at": "2025-03-10",
+      "days_open": 2863,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#1818",
+      "title": "Onboarding Re-work",
+      "state": "closed",
+      "created_at": "2016-11-25",
+      "closed_at": "2023-06-12",
+      "days_open": 2390,
+      "type": "enhancement",
+      "milestone": "Onboarding",
+      "comments": 47
+     },
+     {
+      "cite": "k9#1753",
+      "title": "Hotmail IMAP XOAUTH2",
+      "state": "closed",
+      "created_at": "2016-10-25",
+      "closed_at": "2022-07-05",
+      "days_open": 2079,
+      "type": "enhancement",
+      "milestone": "K-9 Mail 6.200",
+      "comments": 4
+     },
+     {
+      "cite": "k9#766",
+      "title": "Sometimes changing \"Send as\" identity, changes smtp sending server but keeps old \"from: field\".",
+      "state": "closed",
+      "created_at": "2015-08-29",
+      "closed_at": "2020-10-04",
+      "days_open": 1863,
+      "type": "bug",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1445",
+      "title": "Missing inbox email",
+      "state": "closed",
+      "created_at": "2016-06-07",
+      "closed_at": "2019-02-28",
+      "days_open": 996,
+      "type": null,
+      "milestone": null,
+      "comments": 3
+     },
+     {
+      "cite": "k9#1567",
+      "title": "Unable to sync all messages from hotmail",
+      "state": "closed",
+      "created_at": "2016-08-16",
+      "closed_at": "2019-02-28",
+      "days_open": 926,
+      "type": null,
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#2060",
+      "title": "k-9 send to much copies of the same e-mail, because of 'auto save draft' when composing",
+      "state": "closed",
+      "created_at": "2017-01-15",
+      "closed_at": "2019-02-28",
+      "days_open": 774,
+      "type": "bug",
+      "milestone": null,
+      "comments": 3
+     },
+     {
+      "cite": "k9#2791",
+      "title": "Microsoft Exchange Server format issue",
+      "state": "closed",
+      "created_at": "2017-09-25",
+      "closed_at": "2019-03-01",
+      "days_open": 522,
+      "type": null,
+      "milestone": null,
+      "comments": 1
+     }
+    ]
+   },
+   "evidence": {
+    "reviews": [
+     {
+      "cite": "rev:748e8dfc",
+      "star": 4,
+      "date": "2016-06-01",
+      "families": [
+       "F1",
+       "F2",
+       "F3",
+       "F5"
+      ],
+      "lam": 3.5,
+      "text": "Very good Been using it for years for my yahoo Gmail and Hotmail accounts. I have 2 step security on my Hotmail account which means I have to use an app password generated especially for k9. That used to work but since the new look outlook in may 2016 outlook just won't connect t"
+     },
+     {
+      "cite": "rev:74a374b3",
+      "star": 1,
+      "date": "2017-03-28",
+      "families": [
+       "F3"
+      ],
+      "lam": 0.9,
+      "text": "Been great until three days ago and it just stopped working. Rebooted phone. Reinstalled. Nothing. It goes to load messages from hotmail and the progress wheel just spins and spins...nothing."
+     },
+     {
+      "cite": "rev:2027f49d",
+      "star": 2,
+      "date": "2016-08-17",
+      "families": [
+       "F4"
+      ],
+      "lam": 0.8,
+      "text": "Have used it for years but now too buggy Over the last 3 or 4 months my Hotmail that I delete comes back randomly as new mail (I've deleted some mail 10 or 12 times over 4 months) and now all of the emails i had today have disappeared after I switched my phone off for a flight. C"
+     },
+     {
+      "cite": "rev:e8bb3f67",
+      "star": 1,
+      "date": "2017-03-20",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "I have configured gmail account but I can't add second account such as Hotmail. No help or instructions available how to add second account. Uninstalling."
+     },
+     {
+      "cite": "rev:d801f460",
+      "star": 2,
+      "date": "2016-11-20",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Won't work with Yahoo or Gmail With Yahoo and Gmail I get not the right user name or password. Tried web address for problems no place to send issue request. Works go on pop3 and Hotmail. Will change star if fixed."
+     },
+     {
+      "cite": "rev:e907b5d0",
+      "star": 3,
+      "date": "2016-10-24",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Push mail do not work... It is good interface  but push nail do not work and dep end entirely on polling. Is there any guide to do so? I do not remember  but proably I saw a screen during installation that it do not support the popular email like hotmail  yahoo  gmail etc.... Any"
+     },
+     {
+      "cite": "rev:7661666b",
+      "star": 4,
+      "date": "2017-02-10",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "If you have several different email accounts e.g. hotmail gmail yahoo this is the app for you. Latest update can forget read messages e.g. it might decide a couple of previously read mails are unread. This continues to be faulty."
+     },
+     {
+      "cite": "rev:0a6f3d9b",
+      "star": 4,
+      "date": "2017-04-26",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "I know Hotmail/Microsoft seem to be having server problems  so I won't blame the slowness on K-9. I just think Blue Mail has better features for me  so I'm switching."
+     },
+     {
+      "cite": "rev:b3a1405e",
+      "star": 5,
+      "date": "2016-04-29",
+      "families": [
+       "F5"
+      ],
+      "lam": 0.6,
+      "text": "Loving it so far Works well for hotmail/Outlook"
+     },
+     {
+      "cite": "rev:b1d88e44",
+      "star": 1,
+      "date": "2016-05-02",
+      "families": [],
+      "lam": 0,
+      "text": "No Hotmail At the very start it states the the majority of free hotmail accounts won't work. I use hotmail almost exclusively. A lot of people do. I like that the developers don't mind reviews but want a chance to fix a problem. Only thing is the app itself says it doesn't work. "
+     },
+     {
+      "cite": "rev:f21604f0",
+      "star": 1,
+      "date": "2016-04-07",
+      "families": [],
+      "lam": 0,
+      "text": "No Hotmail support You know about this restriction ONLY after downloading  installing and giving away your privacy to this piece of crapware and spyware trash. Why developers don't mention it in the description is to grab as many as possible fake installations. Uninstalled straig"
+     },
+     {
+      "cite": "rev:1b3d25a0",
+      "star": 1,
+      "date": "2016-03-23",
+      "families": [],
+      "lam": 0,
+      "text": "UNINSTALLED: Hoping that this would be a good replacement for the email client that came with the phone  However  when I tried to set it up  both Google and Yahoo servers complained about the lack of security. Software states that it will not connect to HotMail. Sorry to uninstal"
+     }
+    ],
+    "issues": [
+     {
+      "cite": "k9#2819",
+      "title": "Add a way to download only the full headers and not the rest of the content",
+      "state": "open",
+      "created_at": "2017-10-05",
+      "closed_at": null,
+      "days_open": 3221,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 8
+     },
+     {
+      "cite": "k9#865",
+      "title": "Feature Request: Support Mozilla autoconfig",
+      "state": "closed",
+      "created_at": "2015-10-24",
+      "closed_at": "2023-11-07",
+      "days_open": 2936,
+      "type": "enhancement",
+      "milestone": "Onboarding",
+      "comments": 18
+     },
+     {
+      "cite": "k9#2530",
+      "title": "My tasks about improving account setup in GSoC 2017",
+      "state": "closed",
+      "created_at": "2017-05-08",
+      "closed_at": "2025-03-10",
+      "days_open": 2863,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#1818",
+      "title": "Onboarding Re-work",
+      "state": "closed",
+      "created_at": "2016-11-25",
+      "closed_at": "2023-06-12",
+      "days_open": 2390,
+      "type": "enhancement",
+      "milestone": "Onboarding",
+      "comments": 47
+     },
+     {
+      "cite": "k9#1753",
+      "title": "Hotmail IMAP XOAUTH2",
+      "state": "closed",
+      "created_at": "2016-10-25",
+      "closed_at": "2022-07-05",
+      "days_open": 2079,
+      "type": "enhancement",
+      "milestone": "K-9 Mail 6.200",
+      "comments": 4
+     },
+     {
+      "cite": "k9#766",
+      "title": "Sometimes changing \"Send as\" identity, changes smtp sending server but keeps old \"from: field\".",
+      "state": "closed",
+      "created_at": "2015-08-29",
+      "closed_at": "2020-10-04",
+      "days_open": 1863,
+      "type": "bug",
+      "milestone": null,
+      "comments": 4
+     },
+     {
+      "cite": "k9#1445",
+      "title": "Missing inbox email",
+      "state": "closed",
+      "created_at": "2016-06-07",
+      "closed_at": "2019-02-28",
+      "days_open": 996,
+      "type": null,
+      "milestone": null,
+      "comments": 3
+     },
+     {
+      "cite": "k9#1567",
+      "title": "Unable to sync all messages from hotmail",
+      "state": "closed",
+      "created_at": "2016-08-16",
+      "closed_at": "2019-02-28",
+      "days_open": 926,
+      "type": null,
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#2060",
+      "title": "k-9 send to much copies of the same e-mail, because of 'auto save draft' when composing",
+      "state": "closed",
+      "created_at": "2017-01-15",
+      "closed_at": "2019-02-28",
+      "days_open": 774,
+      "type": "bug",
+      "milestone": null,
+      "comments": 3
+     },
+     {
+      "cite": "k9#2791",
+      "title": "Microsoft Exchange Server format issue",
+      "state": "closed",
+      "created_at": "2017-09-25",
+      "closed_at": "2019-03-01",
+      "days_open": 522,
+      "type": null,
+      "milestone": null,
+      "comments": 1
+     }
+    ],
+    "bridge": [
+     {
+      "cite": "k9#3007",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#2628",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#2620",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "k9#1753",
+      "corpus": "k9_issues",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "rev:b1e78265",
+      "corpus": "k9_reviews",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     },
+     {
+      "cite": "rev:0a6f3d9b",
+      "corpus": "k9_reviews",
+      "symptom": "hotmail",
+      "mechanism": "microsoft"
+     }
+    ]
+   },
+   "rank": 4
+  },
+  {
+   "id": "battery",
+   "need": "Battery usage could be improved though.",
+   "quote": "Battery usage could be improved though.",
+   "quote_cite": "rev:80b2d9ba",
+   "quote_star": 4,
+   "label": "battery",
+   "route": "polarity",
+   "symptom_terms": [
+    "battery",
+    "drain",
+    "draining",
+    "power"
+   ],
+   "mechanism_terms": [
+    "high"
+   ],
+   "confidence": 46,
+   "score": {
+    "confidence": 46,
+    "raw": 56.4,
+    "E": {
+     "support": 0.864,
+     "dispersion": 0.802,
+     "friction": 0.52,
+     "quality": 0.528,
+     "E": 0.6818
+    },
+    "L": {
+     "pii_norm": 0.485,
+     "recurrence": 0.0,
+     "mechanism": 1.0,
+     "epic_absence": 0.0,
+     "L": 0.4197
+    },
+    "penalties": [
+     {
+      "code": "control",
+      "cost": 10,
+      "why": "AntennaPod's backlog carries these terms at a similar rate (0.97x) — partly a platform artefact, not purely a K-9 gap"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.6818 + 0.45*L=0.4197)) - 10 penalties"
+   },
+   "verdict": "UNDER-PRIORITIZED",
+   "why": "|issues|=37, |reviews|=53, epics=2, stale=1/37, PII=1.94, bridge=4",
+   "reason": "[demoted: only the 2 strongest framing gaps are reported as MISUNDERSTOOD] the backlog engages this (37 issues) but in a different vocabulary: PII=1.94 with 4 documents witnessing both framings",
+   "metrics": {
+    "dead": false,
+    "n_reviews": 53,
+    "prevalence": 3.4,
+    "mean_star": 2.94,
+    "star_deficit": -0.49,
+    "latent_n": 22,
+    "latent_share": 0.415,
+    "mean_lambda": 0.445,
+    "happy_friction_share": 0.208,
+    "long_form_share": 0.755,
+    "f0_share": 0.302,
+    "months_hit": 17,
+    "max_share": 0.151,
+    "dispersion": 0.802,
+    "by_month": {
+     "2015-12": 4,
+     "2016-01": 1,
+     "2016-02": 2,
+     "2016-03": 2,
+     "2016-04": 5,
+     "2016-05": 6,
+     "2016-06": 2,
+     "2016-07": 3,
+     "2016-08": 2,
+     "2016-09": 1,
+     "2016-10": 4,
+     "2016-11": 1,
+     "2016-12": 5,
+     "2017-01": 8,
+     "2017-02": 3,
+     "2017-03": 2,
+     "2017-04": 2
+    },
+    "n_issues": 37,
+    "n_open": 1,
+    "stale_frac": 0.027,
+    "not_planned_frac": 0.0,
+    "needs_info_frac": 0.243,
+    "enhancement_frac": 0.216,
+    "median_days_open": 86,
+    "epics": [
+     "Design Overhaul",
+     "Mail synchronization"
+    ],
+    "median_closed_at": "2017-10-16",
+    "recurrence": 0.0,
+    "polarity_symptom": 1.54,
+    "polarity_mechanism": 0.4,
+    "pii": 1.94,
+    "pii_norm": 0.485,
+    "bridge_n": 4,
+    "bridge": [
+     {
+      "cite": "k9#1066",
+      "corpus": "k9_issues",
+      "symptom": "power",
+      "mechanism": "high"
+     },
+     {
+      "cite": "k9#1086",
+      "corpus": "k9_issues",
+      "symptom": "battery",
+      "mechanism": "high"
+     },
+     {
+      "cite": "k9#1123",
+      "corpus": "k9_issues",
+      "symptom": "battery",
+      "mechanism": "high"
+     },
+     {
+      "cite": "rev:15fcd8d4",
+      "corpus": "k9_reviews",
+      "symptom": "battery",
+      "mechanism": "high"
+     }
+    ],
+    "control_ratio": 0.97,
+    "control_reading": "platform-wide",
+    "evidence_reviews": [
+     {
+      "cite": "rev:1243df58",
+      "star": 4,
+      "date": "2017-01-07",
+      "families": [
+       "F2",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "Need better testing on release. I use it for few years already. App eating my battery in 8 hours. The problem was with trash folder. Probably bad index after the update. It was impossible to just empy the trash. I delete few of them and finally was able to emty the folder. Develo"
+     },
+     {
+      "cite": "rev:81ebae92",
+      "star": 5,
+      "date": "2017-01-19",
+      "families": [
+       "F2",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "I use it for few years already. App eating my battery in 8 hours. The problem was with trash folder. Probably bad index after the update. It was impossible to just empy the trash. I delete few of them and finally was able to emty the folder. Developers tolerate deleting more than"
+     },
+     {
+      "cite": "rev:aaf3af4e",
+      "star": 3,
+      "date": "2017-02-17",
+      "families": [
+       "F1",
+       "F4"
+      ],
+      "lam": 1.8,
+      "text": "UPDATE: It's been my favorite mail client for years  it usually just works once you've set up everything. Perfect for IMAP. Though  with Android 6 you have to manually exclude K-9 from battery optimization  else it will stop receiving new mails. However: Ever since a recent major"
+     },
+     {
+      "cite": "rev:21d8b1e5",
+      "star": 5,
+      "date": "2016-08-12",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Sub folder sync support Although mail usage is dominated by Gmail and Outlook  K-9 plays a very niche role. It allows user to configure the mail they would like it. So you can do things like subfolder sync  periodic notification (instead of relentless push). If you are a power us"
+     },
+     {
+      "cite": "rev:9dd140e1",
+      "star": 3,
+      "date": "2016-12-03",
+      "families": [
+       "F4",
+       "F5"
+      ],
+      "lam": 1.4,
+      "text": "meh works pretty good. looks ugly. battery hog. im a long time user and have recently switched to bluemail because of battery drain issues. goodbye  k-9 mail."
+     },
+     {
+      "cite": "rev:90173274",
+      "star": 4,
+      "date": "2016-05-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "It's very good but last version 5.010 is draining the battery (59% use)"
+     },
+     {
+      "cite": "rev:b64b51c9",
+      "star": 4,
+      "date": "2016-04-27",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Love it  but I really love K9  but the latest update is now killing my battery. K9 is now the highest power user in the list"
+     },
+     {
+      "cite": "rev:15fcd8d4",
+      "star": 4,
+      "date": "2016-04-01",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Could look a little nicer but functionality is awesome. One finger has to touch text of short messages to punch zoom. High battery usage if Internet spotty (too many retries?)"
+     },
+     {
+      "cite": "rev:fe229117",
+      "star": 4,
+      "date": "2016-12-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Not the prettiest application  but proof that looks can be deceiving. I have to admit  I was hesitant to take K-9 Mail for a spin because it's not much to look at and it didn't appear to offer anything particularly special... But whilst others may look pretty  I don't trust some "
+     },
+     {
+      "cite": "rev:80b2d9ba",
+      "star": 4,
+      "date": "2017-01-04",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Not the prettiest application  but proof that looks can be deceiving. I have to admit  I was hesitant to take K-9 Mail for a spin because it's not much to look at and it didn't appear to offer anything particularly special... But whilst others may look pretty  I don't trust some "
+     },
+     {
+      "cite": "rev:3ec69737",
+      "star": 5,
+      "date": "2016-03-12",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Simply the Best. Have been using K9 2 years now. Took a bit of working out to set up correctly  but it was worth it - ever since it has worked flawlessly. Using multiple email accounts  using IMAP Push with Polling turned off it uses almost no battery. Simple to use  easy to read"
+     },
+     {
+      "cite": "rev:9d975b0b",
+      "star": 5,
+      "date": "2016-02-11",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "nice and light email app. uses less battery and data than all the rest  and does a good job handling it all. although it does lag from time to time when sending and receiving email"
+     }
+    ],
+    "evidence_issues": [
+     {
+      "cite": "k9#1066",
+      "title": "Optimize power consumption in situations with intermittent/bad connectivity",
+      "state": "open",
+      "created_at": "2016-02-03",
+      "closed_at": null,
+      "days_open": 3831,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     },
+     {
+      "cite": "k9#2652",
+      "title": "Long read timeout makes it appear that the app has stopped working when the connection is closed",
+      "state": "closed",
+      "created_at": "2017-07-30",
+      "closed_at": "2026-01-28",
+      "days_open": 3104,
+      "type": "architecture",
+      "milestone": null,
+      "comments": 9
+     },
+     {
+      "cite": "k9#927",
+      "title": "Undesirable messages when synchronizing",
+      "state": "closed",
+      "created_at": "2015-12-02",
+      "closed_at": "2022-10-28",
+      "days_open": 2522,
+      "type": "enhancement",
+      "milestone": "Mail synchronization",
+      "comments": 1
+     },
+     {
+      "cite": "k9#1859",
+      "title": "Concept: Material Redesign",
+      "state": "closed",
+      "created_at": "2016-12-20",
+      "closed_at": "2023-03-22",
+      "days_open": 2283,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 69
+     },
+     {
+      "cite": "k9#857",
+      "title": "Figure out how to deal with Doze (Android 6+)",
+      "state": "closed",
+      "created_at": "2015-10-23",
+      "closed_at": "2021-06-30",
+      "days_open": 2077,
+      "type": "enhancement",
+      "milestone": "Mail synchronization",
+      "comments": 180
+     },
+     {
+      "cite": "k9#822",
+      "title": "Use folding to properly handle To/CC/BCC with more than 1000 characters",
+      "state": "closed",
+      "created_at": "2015-09-30",
+      "closed_at": "2019-02-14",
+      "days_open": 1233,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#656",
+      "title": "Use Sync Adapter for mail synchronization",
+      "state": "closed",
+      "created_at": "2015-05-23",
+      "closed_at": "2018-09-10",
+      "days_open": 1206,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#1366",
+      "title": "High data usage observed",
+      "state": "closed",
+      "created_at": "2016-05-10",
+      "closed_at": "2019-02-28",
+      "days_open": 1024,
+      "type": null,
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#890",
+      "title": "Certain emails causing DKIM failures",
+      "state": "closed",
+      "created_at": "2015-11-10",
+      "closed_at": "2018-08-26",
+      "days_open": 1020,
+      "type": "bug",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1563",
+      "title": "[feature suggestion] possitibility to input any checking account interval in minutes",
+      "state": "closed",
+      "created_at": "2016-08-14",
+      "closed_at": "2019-02-28",
+      "days_open": 928,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     }
+    ]
+   },
+   "evidence": {
+    "reviews": [
+     {
+      "cite": "rev:1243df58",
+      "star": 4,
+      "date": "2017-01-07",
+      "families": [
+       "F2",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "Need better testing on release. I use it for few years already. App eating my battery in 8 hours. The problem was with trash folder. Probably bad index after the update. It was impossible to just empy the trash. I delete few of them and finally was able to emty the folder. Develo"
+     },
+     {
+      "cite": "rev:81ebae92",
+      "star": 5,
+      "date": "2017-01-19",
+      "families": [
+       "F2",
+       "F3"
+      ],
+      "lam": 1.9,
+      "text": "I use it for few years already. App eating my battery in 8 hours. The problem was with trash folder. Probably bad index after the update. It was impossible to just empy the trash. I delete few of them and finally was able to emty the folder. Developers tolerate deleting more than"
+     },
+     {
+      "cite": "rev:aaf3af4e",
+      "star": 3,
+      "date": "2017-02-17",
+      "families": [
+       "F1",
+       "F4"
+      ],
+      "lam": 1.8,
+      "text": "UPDATE: It's been my favorite mail client for years  it usually just works once you've set up everything. Perfect for IMAP. Though  with Android 6 you have to manually exclude K-9 from battery optimization  else it will stop receiving new mails. However: Ever since a recent major"
+     },
+     {
+      "cite": "rev:21d8b1e5",
+      "star": 5,
+      "date": "2016-08-12",
+      "families": [
+       "F2",
+       "F5"
+      ],
+      "lam": 1.6,
+      "text": "Sub folder sync support Although mail usage is dominated by Gmail and Outlook  K-9 plays a very niche role. It allows user to configure the mail they would like it. So you can do things like subfolder sync  periodic notification (instead of relentless push). If you are a power us"
+     },
+     {
+      "cite": "rev:9dd140e1",
+      "star": 3,
+      "date": "2016-12-03",
+      "families": [
+       "F4",
+       "F5"
+      ],
+      "lam": 1.4,
+      "text": "meh works pretty good. looks ugly. battery hog. im a long time user and have recently switched to bluemail because of battery drain issues. goodbye  k-9 mail."
+     },
+     {
+      "cite": "rev:90173274",
+      "star": 4,
+      "date": "2016-05-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "It's very good but last version 5.010 is draining the battery (59% use)"
+     },
+     {
+      "cite": "rev:b64b51c9",
+      "star": 4,
+      "date": "2016-04-27",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Love it  but I really love K9  but the latest update is now killing my battery. K9 is now the highest power user in the list"
+     },
+     {
+      "cite": "rev:15fcd8d4",
+      "star": 4,
+      "date": "2016-04-01",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Could look a little nicer but functionality is awesome. One finger has to touch text of short messages to punch zoom. High battery usage if Internet spotty (too many retries?)"
+     },
+     {
+      "cite": "rev:fe229117",
+      "star": 4,
+      "date": "2016-12-16",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Not the prettiest application  but proof that looks can be deceiving. I have to admit  I was hesitant to take K-9 Mail for a spin because it's not much to look at and it didn't appear to offer anything particularly special... But whilst others may look pretty  I don't trust some "
+     },
+     {
+      "cite": "rev:80b2d9ba",
+      "star": 4,
+      "date": "2017-01-04",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Not the prettiest application  but proof that looks can be deceiving. I have to admit  I was hesitant to take K-9 Mail for a spin because it's not much to look at and it didn't appear to offer anything particularly special... But whilst others may look pretty  I don't trust some "
+     },
+     {
+      "cite": "rev:3ec69737",
+      "star": 5,
+      "date": "2016-03-12",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "Simply the Best. Have been using K9 2 years now. Took a bit of working out to set up correctly  but it was worth it - ever since it has worked flawlessly. Using multiple email accounts  using IMAP Push with Polling turned off it uses almost no battery. Simple to use  easy to read"
+     },
+     {
+      "cite": "rev:9d975b0b",
+      "star": 5,
+      "date": "2016-02-11",
+      "families": [
+       "F2"
+      ],
+      "lam": 1.0,
+      "text": "nice and light email app. uses less battery and data than all the rest  and does a good job handling it all. although it does lag from time to time when sending and receiving email"
+     }
+    ],
+    "issues": [
+     {
+      "cite": "k9#1066",
+      "title": "Optimize power consumption in situations with intermittent/bad connectivity",
+      "state": "open",
+      "created_at": "2016-02-03",
+      "closed_at": null,
+      "days_open": 3831,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     },
+     {
+      "cite": "k9#2652",
+      "title": "Long read timeout makes it appear that the app has stopped working when the connection is closed",
+      "state": "closed",
+      "created_at": "2017-07-30",
+      "closed_at": "2026-01-28",
+      "days_open": 3104,
+      "type": "architecture",
+      "milestone": null,
+      "comments": 9
+     },
+     {
+      "cite": "k9#927",
+      "title": "Undesirable messages when synchronizing",
+      "state": "closed",
+      "created_at": "2015-12-02",
+      "closed_at": "2022-10-28",
+      "days_open": 2522,
+      "type": "enhancement",
+      "milestone": "Mail synchronization",
+      "comments": 1
+     },
+     {
+      "cite": "k9#1859",
+      "title": "Concept: Material Redesign",
+      "state": "closed",
+      "created_at": "2016-12-20",
+      "closed_at": "2023-03-22",
+      "days_open": 2283,
+      "type": "enhancement",
+      "milestone": "Design Overhaul",
+      "comments": 69
+     },
+     {
+      "cite": "k9#857",
+      "title": "Figure out how to deal with Doze (Android 6+)",
+      "state": "closed",
+      "created_at": "2015-10-23",
+      "closed_at": "2021-06-30",
+      "days_open": 2077,
+      "type": "enhancement",
+      "milestone": "Mail synchronization",
+      "comments": 180
+     },
+     {
+      "cite": "k9#822",
+      "title": "Use folding to properly handle To/CC/BCC with more than 1000 characters",
+      "state": "closed",
+      "created_at": "2015-09-30",
+      "closed_at": "2019-02-14",
+      "days_open": 1233,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 6
+     },
+     {
+      "cite": "k9#656",
+      "title": "Use Sync Adapter for mail synchronization",
+      "state": "closed",
+      "created_at": "2015-05-23",
+      "closed_at": "2018-09-10",
+      "days_open": 1206,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#1366",
+      "title": "High data usage observed",
+      "state": "closed",
+      "created_at": "2016-05-10",
+      "closed_at": "2019-02-28",
+      "days_open": 1024,
+      "type": null,
+      "milestone": null,
+      "comments": 2
+     },
+     {
+      "cite": "k9#890",
+      "title": "Certain emails causing DKIM failures",
+      "state": "closed",
+      "created_at": "2015-11-10",
+      "closed_at": "2018-08-26",
+      "days_open": 1020,
+      "type": "bug",
+      "milestone": null,
+      "comments": 5
+     },
+     {
+      "cite": "k9#1563",
+      "title": "[feature suggestion] possitibility to input any checking account interval in minutes",
+      "state": "closed",
+      "created_at": "2016-08-14",
+      "closed_at": "2019-02-28",
+      "days_open": 928,
+      "type": "enhancement",
+      "milestone": null,
+      "comments": 1
+     }
+    ],
+    "bridge": [
+     {
+      "cite": "k9#1066",
+      "corpus": "k9_issues",
+      "symptom": "power",
+      "mechanism": "high"
+     },
+     {
+      "cite": "k9#1086",
+      "corpus": "k9_issues",
+      "symptom": "battery",
+      "mechanism": "high"
+     },
+     {
+      "cite": "k9#1123",
+      "corpus": "k9_issues",
+      "symptom": "battery",
+      "mechanism": "high"
+     },
+     {
+      "cite": "rev:15fcd8d4",
+      "corpus": "k9_reviews",
+      "symptom": "battery",
+      "mechanism": "high"
+     }
+    ]
+   },
+   "rank": 5
+  }
+ ],
+ "rejected": [
+  {
+   "id": "reading",
+   "label": "reading",
+   "route": "latent",
+   "symptom_terms": [
+    "reading"
+   ],
+   "mechanism_terms": [
+    "fingers"
+   ],
+   "failed": "burst",
+   "confidence": 20,
+   "detail": "confidence 20 < floor 25",
+   "components": {
+    "confidence": 20,
+    "raw": 43.1,
+    "E": {
+     "support": 0.626,
+     "dispersion": 0.209,
+     "friction": 0.587,
+     "quality": 0.912,
+     "E": 0.6046
+    },
+    "L": {
+     "pii_norm": 0.145,
+     "recurrence": 0.176,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.2198
+    },
+    "penalties": [
+     {
+      "code": "burst",
+      "cost": 15,
+      "why": "53% of evidence lands in one month — that is an event, not a sustained need"
+     },
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.6046 + 0.45*L=0.2198)) - 23 penalties"
+   }
+  },
+  {
+   "id": "tested",
+   "label": "tested",
+   "route": "latent",
+   "symptom_terms": [
+    "tested"
+   ],
+   "mechanism_terms": [
+    "response"
+   ],
+   "failed": "burst",
+   "confidence": 21,
+   "detail": "confidence 21 < floor 25",
+   "components": {
+    "confidence": 21,
+    "raw": 44.4,
+    "E": {
+     "support": 0.556,
+     "dispersion": 0.259,
+     "friction": 0.625,
+     "quality": 0.625,
+     "E": 0.531
+    },
+    "L": {
+     "pii_norm": 0.547,
+     "recurrence": 0.083,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.3372
+    },
+    "penalties": [
+     {
+      "code": "burst",
+      "cost": 15,
+      "why": "42% of evidence lands in one month — that is an event, not a sustained need"
+     },
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.531 + 0.45*L=0.3372)) - 23 penalties"
+   }
+  },
+  {
+   "id": "multiple-accounts",
+   "label": "multiple accounts",
+   "route": "polarity",
+   "symptom_terms": [
+    "multiple accounts",
+    "several accounts"
+   ],
+   "mechanism_terms": [
+    "less secure"
+   ],
+   "failed": "unwitnessed",
+   "confidence": 24,
+   "detail": "confidence 24 < floor 25",
+   "components": {
+    "confidence": 24,
+    "raw": 32.4,
+    "E": {
+     "support": 0.587,
+     "dispersion": 0.349,
+     "friction": 0.357,
+     "quality": 0.465,
+     "E": 0.4513
+    },
+    "L": {
+     "pii_norm": 0.122,
+     "recurrence": 0.0,
+     "mechanism": 0.5,
+     "epic_absence": 0.0,
+     "L": 0.1677
+    },
+    "penalties": [
+     {
+      "code": "unwitnessed",
+      "cost": 8,
+      "why": "only 0 documents use both vocabularies; the link is inferred, not observed"
+     }
+    ],
+    "formula": "round(100 * (0.55*E=0.4513 + 0.45*L=0.1677)) - 8 penalties"
+   }
+  },
+  {
+   "id": "getting",
+   "label": "getting",
+   "route": "latent",
+   "symptom_terms": [
+    "getting"
+   ],
+   "mechanism_terms": [
+    "username password",
+    "password account",
+    "authenticate",
+    "failure",
+    "failures",
+    "authentication fails"
+   ],
+   "failed": "rank",
+   "confidence": 49,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "google",
+   "label": "google",
+   "route": "latent",
+   "symptom_terms": [
+    "google"
+   ],
+   "mechanism_terms": [
+    "less secure",
+    "alert",
+    "leave"
+   ],
+   "failed": "rank",
+   "confidence": 46,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "zoom",
+   "label": "zoom",
+   "route": "polarity",
+   "symptom_terms": [
+    "zoom",
+    "pinch",
+    "font size",
+    "text size"
+   ],
+   "mechanism_terms": [
+    "fingers"
+   ],
+   "failed": "rank",
+   "confidence": 43,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "receive",
+   "label": "receive",
+   "route": "latent",
+   "symptom_terms": [
+    "receive"
+   ],
+   "mechanism_terms": [
+    "loaded",
+    "configured"
+   ],
+   "failed": "rank",
+   "confidence": 54,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "uninstalling",
+   "label": "uninstalling",
+   "route": "polarity",
+   "symptom_terms": [
+    "uninstalling"
+   ],
+   "mechanism_terms": [
+    "code"
+   ],
+   "failed": "rank",
+   "confidence": 44,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "uninstalled",
+   "label": "uninstalled",
+   "route": "polarity",
+   "symptom_terms": [
+    "uninstalled"
+   ],
+   "mechanism_terms": [
+    "rid",
+    "separate"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "contact",
+   "label": "contact",
+   "route": "latent",
+   "symptom_terms": [
+    "contact"
+   ],
+   "mechanism_terms": [
+    "expect"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "less",
+   "label": "less",
+   "route": "latent",
+   "symptom_terms": [
+    "less"
+   ],
+   "mechanism_terms": [
+    "based"
+   ],
+   "failed": "rank",
+   "confidence": 47,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "notifications",
+   "label": "notifications",
+   "route": "latent",
+   "symptom_terms": [
+    "notification",
+    "notifications",
+    "notify"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 41,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "source",
+   "label": "source",
+   "route": "polarity",
+   "symptom_terms": [
+    "source"
+   ],
+   "mechanism_terms": [
+    "signed encrypted",
+    "anyways",
+    "keys",
+    "signed"
+   ],
+   "failed": "rank",
+   "confidence": 37,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "list",
+   "label": "list",
+   "route": "latent",
+   "symptom_terms": [
+    "list"
+   ],
+   "mechanism_terms": [
+    "seconds"
+   ],
+   "failed": "rank",
+   "confidence": 40,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "syncing-disabled",
+   "label": "syncing disabled",
+   "route": "polarity",
+   "symptom_terms": [
+    "syncing disabled",
+    "sync disabled"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 40,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "nougat",
+   "label": "nougat",
+   "route": "polarity",
+   "symptom_terms": [
+    "nougat"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 44,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "stock",
+   "label": "stock",
+   "route": "polarity",
+   "symptom_terms": [
+    "stock"
+   ],
+   "mechanism_terms": [
+    "attempt"
+   ],
+   "failed": "rank",
+   "confidence": 36,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "replies",
+   "label": "replies",
+   "route": "latent",
+   "symptom_terms": [
+    "replies"
+   ],
+   "mechanism_terms": [
+    "enabled"
+   ],
+   "failed": "rank",
+   "confidence": 35,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "configure",
+   "label": "configure",
+   "route": "latent",
+   "symptom_terms": [
+    "configure"
+   ],
+   "mechanism_terms": [
+    "seconds"
+   ],
+   "failed": "rank",
+   "confidence": 39,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "mark-read",
+   "label": "mark read",
+   "route": "polarity",
+   "symptom_terms": [
+    "mark read"
+   ],
+   "mechanism_terms": [
+    "actions",
+    "marked"
+   ],
+   "failed": "rank",
+   "confidence": 32,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "authentication",
+   "label": "authentication",
+   "route": "latent",
+   "symptom_terms": [
+    "authentication"
+   ],
+   "mechanism_terms": [
+    "username password",
+    "password account",
+    "authenticate",
+    "failure",
+    "failures",
+    "response"
+   ],
+   "failed": "rank",
+   "confidence": 32,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "design",
+   "label": "design",
+   "route": "polarity",
+   "symptom_terms": [
+    "design"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 29,
+   "detail": "scored below the top 5"
+  },
+  {
+   "id": "ads",
+   "label": "ads",
+   "route": "polarity",
+   "symptom_terms": [
+    "ads",
+    "advert",
+    "advertising"
+   ],
+   "mechanism_terms": [],
+   "failed": "rank",
+   "confidence": 28,
+   "detail": "scored below the top 5"
+  }
+ ],
+ "meta": {
+  "as_of": "2026-07-31",
+  "reviews": 1560,
+  "issues": 1718,
+  "candidates_considered": 48,
+  "surfaced": 5
+ }
+}
